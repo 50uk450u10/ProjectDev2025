@@ -64,22 +64,22 @@
             {
                 "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "ShapeBuilder.ActiveShapeIndex",
-                "value": "{\"m_Value\":6}"
+                "value": "{\"m_Value\":1}"
             },
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize.Cube",
-                "value": "{\"m_Value\":{\"x\":0.9022979736328125,\"y\":2.2492597103118898,\"z\":1.8053054809570313}}"
+                "value": "{\"m_Value\":{\"x\":0.334075927734375,\"y\":-4.299139022827148,\"z\":0.1207122802734375}}"
             },
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize.Plane",
-                "value": "{\"m_Value\":{\"x\":-29.194580078125,\"y\":0.0,\"z\":23.00829315185547}}"
+                "value": "{\"m_Value\":{\"x\":20.035362243652345,\"y\":0.0,\"z\":-37.30400848388672}}"
             },
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize.Prism",
-                "value": "{\"m_Value\":{\"x\":-4.0954437255859379,\"y\":2.5042238235473635,\"z\":-6.026103973388672}}"
+                "value": "{\"m_Value\":{\"x\":2.523822784423828,\"y\":1.4838792085647584,\"z\":-16.187179565429689}}"
             },
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
