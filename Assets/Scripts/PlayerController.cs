@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.DefaultInputActions;
 
@@ -11,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed;
     PlayerInput playerMovement;
     IA_Player movement;
+    public UnityAction on_InteractPressed;
+    public UnityAction on_InteractReleased;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,16 @@ public class PlayerController : MonoBehaviour
         // movement
         //input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         input = movement.PlayerMovement.Movement.ReadValue<Vector2>();
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            on_InteractPressed?.Invoke();
+        }
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            on_InteractReleased?.Invoke();
+        }
     }
     private void FixedUpdate()
     {
@@ -48,4 +62,5 @@ public class PlayerController : MonoBehaviour
 
         return input.x * camRight + input.y * camForward;
     }
+
 }
