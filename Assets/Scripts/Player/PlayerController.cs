@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed;
     PlayerInput playerMovement;
     IA_Player movement;
+    [SerializeField] Inventory myInventory;
 
     // Start is called before the first frame update
     void Start()
@@ -47,5 +48,22 @@ public class PlayerController : MonoBehaviour
         camForward.Normalize();
 
         return input.x * camRight + input.y * camForward;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Press E to Interact");
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (other.gameObject.GetComponent<Item>() != null)
+            {
+                myInventory.AddItem(other.gameObject.GetComponent<Item>());
+                Debug.Log("Item Added!");
+            }
+        }
     }
 }
