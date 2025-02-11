@@ -50,20 +50,4 @@ public class PlayerController : MonoBehaviour
         return input.x * camRight + input.y * camForward;
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Press E to Interact");
-    }
-
-    public void OnTriggerStay(Collider other)
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (other.gameObject.GetComponent<Item>() != null)
-            {
-                myInventory.AddItem(other.gameObject.GetComponent<Item>());
-                Debug.Log("Item Added!");
-            }
-        }
-    }
 }
