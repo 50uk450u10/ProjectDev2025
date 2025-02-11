@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class Flashlight : MonoBehaviour
 {
     [SerializeField] Light flashLight;
+    [SerializeField] Light areaLight;
     bool FlashlightOn = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,6 +19,7 @@ public class Flashlight : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && FlashlightOn == true)
         {
             Debug.Log("F key was pressed.");
+            areaLight.intensity = 0.0f;
             flashLight.intensity = 0.0f;
             FlashlightOn = false;
         }
@@ -26,6 +28,7 @@ public class Flashlight : MonoBehaviour
         {
 
             Debug.Log("F key was pressed.");
+            areaLight.intensity = 1.75f;
             flashLight.intensity = 1.0f;
             FlashlightOn = true;
         }
