@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -10,7 +11,10 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 input;
     private Rigidbody rb;
-    [SerializeField] float speed;
+    [SerializeField] float speed; // allows editor to set default speed
+    [SerializeField] float sprintSpeed; // allows ediotr to set sprint speed
+    public bool isSprinting;
+    private float playerSpeed; 
     PlayerInput playerMovement;
     IA_Player movement;
     public UnityAction on_InteractPressed;
@@ -24,6 +28,7 @@ public class PlayerController : MonoBehaviour
         playerMovement = GetComponent<PlayerInput>();
         movement = new IA_Player();
         movement.PlayerMovement.Enable();
+        playerSpeed = speed;
     }
 
     // Update is called once per frame
@@ -42,12 +47,21 @@ public class PlayerController : MonoBehaviour
         {
             on_InteractReleased?.Invoke();
         }
+        
+        if(isSprinting == true)
+        {
+            playerSpeed = sprintSpeed;
+        }
+        else
+        {
+            playerSpeed = speed;
+        }
     }
     private void FixedUpdate()
     {
         var newInput = GetCameraBasedInput(input, Camera.main);
 
-        var newVelocity = new Vector3(newInput.x * speed, rb.linearVelocity.y, newInput.z * speed);
+        var newVelocity = new Vector3(newInput.x * playerSpeed, rb.linearVelocity.y, newInput.z * playerSpeed);
 
         rb.linearVelocity = newVelocity;
     }
@@ -64,4 +78,15 @@ public class PlayerController : MonoBehaviour
         return input.x * camRight + input.y * camForward;
     }
 
+    public void SprintPressed()
+    {
+        isSprinting = true;
+        Debug.Log(isSprinting);
+    }
+
+    public void SprintReleased()
+    {
+        isSprinting = false;
+        Debug.Log(isSprinting);
+    }
 }
