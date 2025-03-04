@@ -14,8 +14,6 @@ public class SprintHandler : MonoBehaviour
     void Start()
     {
         playerController = GetComponent<PlayerController>();
-        scriptOnlySprintDuration = sprintDuration;
-        scriptOnlySprintCooldown = sprintCooldown;
         canSprint = true;
     }
 
@@ -32,6 +30,8 @@ public class SprintHandler : MonoBehaviour
     private void StartSprinting()
     {
         playerController.playerSpeed = sprintSpeed;
+        scriptOnlySprintDuration = sprintDuration;
+        scriptOnlySprintCooldown = sprintCooldown;
         StartCoroutine(Sprinting());
     }
 
