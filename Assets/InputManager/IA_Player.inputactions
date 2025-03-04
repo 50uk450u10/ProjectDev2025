@@ -24,15 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SprintStart",
-                    "type": "Button",
-                    "id": "641cd816-40e6-41b4-8c3d-04687c349290",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Movement",
                     "type": "Value",
                     "id": "613440d2-7035-4b85-9f35-8fb452244f72",
@@ -40,29 +31,9 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "SprintEnd",
-                    "type": "Button",
-                    "id": "b421dba7-edfd-44ca-9819-ab859e2c202f",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "f2e9ba44-c423-42a7-ad56-f20975884794",
-                    "path": "<Keyboard>/leftShift",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SprintStart",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "1c04ea5f-b012-41d1-a6f7-02e963b52893",
@@ -139,17 +110,6 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "c9269927-d205-482f-ab99-46438e18083c",
-                    "path": "<Keyboard>/leftShift",
-                    "interactions": "Press(pressPoint=1.401298E-45,behavior=1)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SprintEnd",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },
