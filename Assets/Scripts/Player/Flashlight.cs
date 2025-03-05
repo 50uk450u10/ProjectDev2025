@@ -5,7 +5,7 @@ public class Flashlight : MonoBehaviour
 {
     [SerializeField] Light flashLight;
     [SerializeField] Light areaLight;
-    bool FlashlightOn = true;
+    public bool FlashlightOn = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

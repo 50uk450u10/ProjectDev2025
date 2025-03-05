@@ -6,6 +6,7 @@ public class Interactable : MonoBehaviour
     private PlayerController player = null;
     public UnityEvent onPerformInteraction;
     public UnityEvent onEndInteraction;
+    public bool isHidingSpot;
 
     //Invoke Unity Event to perform interaction logic
     public void PerformInteraction()

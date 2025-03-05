@@ -11,9 +11,10 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 input;
     private Rigidbody rb;
-    [SerializeField] float speed; // allows editor to set default speed
+    public float speed; // allows editor to set default speed
     [SerializeField] float sprintSpeed; // allows ediotr to set sprint speed
     public bool isSprinting;
+    public bool isHiding;
     private float playerSpeed; 
     PlayerInput playerMovement;
     IA_Player movement;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         movement = new IA_Player();
         movement.PlayerMovement.Enable();
         playerSpeed = speed;
+        isHiding = false;
     }
 
     // Update is called once per frame
