@@ -5,23 +5,29 @@ using UnityEngine.AI;
 
 public class EnemyAIOutside : MonoBehaviour
 {
-
+    #region Properties
     private enum State { PASSIVE, APPEARING, STALKING, ATTACKING } //The 4 phases of the monster, starting from spawning in, ending with obtaining the last key
     private State currentState;
     private float appearTimer = 0f;
+    private NavMeshAgent agent;
 
+    [SerializeField] Transform caveLocation;
     [SerializeField] Transform appearLocation;
     [SerializeField] float appearDuration = 30f;
     [SerializeField] Transform disappearLocation;
     [SerializeField] float disappearDistance = 100f;
+    [SerializeField] float stalkDistance = 50f;
     [SerializeField] Transform player; //Hook in our player for calculations
-    
 
+    #endregion
+
+    #region Unity Functions
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentState = State.PASSIVE;
+        currentState = State.APPEARING;
         IncrementState();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -29,11 +35,10 @@ public class EnemyAIOutside : MonoBehaviour
     {
         switch (currentState)
         {
-            case State.PASSIVE:
+            case State.PASSIVE: //In this phase, the monster does nothing, just sits in cave
                 //Do nothing
                 break;
-            case State.APPEARING:
-                Debug.Log(Vector3.Distance(player.position, transform.position));
+            case State.APPEARING: //Once triggered, the monster will start appearing behind the player and disappear if you become too close
                 if (Vector3.Distance(player.position, transform.position) <= disappearDistance) //Check to make sure the player isn't too close to the monster
                 {
                     gameObject.transform.position = disappearLocation.position; //Move the monster far away and out of sight
@@ -46,10 +51,33 @@ public class EnemyAIOutside : MonoBehaviour
                 }
                 appearTimer += Time.deltaTime;
                 break;
-            case State.STALKING:
+            case State.STALKING: //Once triggered, the monster will navmesh a certain distance towards player if they aren't looking, and run away if seen
+                if (Vector3.Distance(player.position, transform.position) >= stalkDistance) //Check to make sure we aren't too close to the player
+                {
+                    //Obtain the dot product of the player
+                    Vector3 directionToMonster = (transform.position - player.position).normalized;
+                    Vector3 playerForwardDirection = player.transform.forward;
 
+                    float dot = Vector3.Dot(playerForwardDirection, directionToMonster);
+
+                    if (dot > 0.5f) //if the monster is in line of sight of the player
+                    {
+                        //sample a random position behind the monster, run to that position
+                        agent.SetDestination(caveLocation.position);
+                    }
+                    else if (dot < 0.5f) //If monster is not in line of sight of player
+                    {
+                        agent.SetDestination(player.position);
+                        
+                    }
+                    else if (Vector3.Distance(player.position, transform.position) < stalkDistance)
+                    {
+                        agent.ResetPath();
+                        gameObject.transform.position = appearLocation.position;
+                    }
+                }
                 break;
-            case State.ATTACKING:
+            case State.ATTACKING: //Once triggered, the monster will slowly pursue player 
 
                 break;
             default:
@@ -58,6 +86,8 @@ public class EnemyAIOutside : MonoBehaviour
 
         }
     }
+
+#endregion
 
     public void IncrementState()
     {
