@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 
 public class EnemyAIOutside : MonoBehaviour
@@ -10,6 +11,8 @@ public class EnemyAIOutside : MonoBehaviour
     private State currentState;
     private float appearTimer = 0f;
     private NavMeshAgent agent;
+
+    public UnityEvent onContactPlayer;
 
     [SerializeField] Transform caveLocation;
     [SerializeField] Transform appearLocation;
@@ -87,7 +90,23 @@ public class EnemyAIOutside : MonoBehaviour
         }
     }
 
-#endregion
+    #endregion
+
+    #region Custom Functions
+
+    public void PerformContactInteraction() //Plug in a function here, perform it when called by collider trigger
+    {
+        onContactPlayer?.Invoke();
+    }
+
+    private void OnTriggerEnter(Collider other) //Check for player inside trigger colliders, perform contact function if it is player
+    {
+        if (other.gameObject == player.gameObject)
+        {
+            onContactPlayer?.Invoke();
+            //PerformContactInteraction();
+        }
+    }
 
     public void IncrementState()
     {
@@ -95,4 +114,6 @@ public class EnemyAIOutside : MonoBehaviour
         currentState++; //We allow other actions in the game to call this function to change the monster's behavior
         Debug.Log(currentState);
     }
+
+    #endregion
 }

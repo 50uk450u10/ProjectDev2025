@@ -22,6 +22,7 @@ public class PlayerDeath : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("You've been killed by The Monster!");
+
         SceneManager.LoadScene(currentScene);
     }
 }

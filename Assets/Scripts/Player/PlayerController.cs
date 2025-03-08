@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float sprintSpeed; // allows ediotr to set sprint speed
     public bool isSprinting;
     private float playerSpeed; 
-    PlayerInput playerMovement;
     IA_Player movement;
     public UnityAction on_InteractPressed;
     public UnityAction on_InteractReleased;
@@ -25,10 +24,20 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        playerMovement = GetComponent<PlayerInput>();
+        //movement = new IA_Player();
+        //movement.PlayerMovement.Enable();
+        playerSpeed = speed;
+    }
+
+    private void OnEnable()
+    {
         movement = new IA_Player();
         movement.PlayerMovement.Enable();
-        playerSpeed = speed;
+    }
+
+    private void OnDisable()
+    {
+        movement.PlayerMovement.Disable();
     }
 
     // Update is called once per frame
