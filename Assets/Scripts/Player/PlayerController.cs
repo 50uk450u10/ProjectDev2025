@@ -18,19 +18,19 @@ public class PlayerController : MonoBehaviour
     IA_Player movement;
     public UnityAction on_InteractPressed;
     public UnityAction on_InteractReleased;
-    [SerializeField] Inventory myInventory;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //movement = new IA_Player();
-        //movement.PlayerMovement.Enable();
+        //movement = new IA_Player(); This needs to be in OnEnable()
+        //movement.PlayerMovement.Enable(); This needs to be in OnEnable()
         playerSpeed = speed;
     }
 
     private void OnEnable()
     {
+        
         movement = new IA_Player();
         movement.PlayerMovement.Enable();
     }
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         //input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         input = movement.PlayerMovement.Movement.ReadValue<Vector2>();
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)) //We should move this over to the new input system as well
         {
             on_InteractPressed?.Invoke();
         }
