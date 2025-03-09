@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 7524461912454867765}
   - component: {fileID: 4544232836375038880}
   - component: {fileID: 4484180831030352836}
+  - component: {fileID: 1453781262059407483}
   - component: {fileID: 2008052835951661178}
   - component: {fileID: 3410875587566441299}
   m_Layer: 0
@@ -462,8 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  sprintSpeed: 6
-  isSprinting: 0
+  playerSpeed: 0
 --- !u!114 &4484180831030352836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +480,21 @@ MonoBehaviour:
   lookPos: {fileID: 3498883942130810017}
   topClamp: -90
   bottomClamp: 90
+--- !u!114 &1453781262059407483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6637040341132927618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9aefdbd0b652b84ab4f7d51eaebb0dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprintSpeed: 10
+  sprintDuration: 3
+  sprintCooldown: 5
 --- !u!54 &2008052835951661178
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -541,22 +556,6 @@ MonoBehaviour:
     m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
     m_ActionName: 'PlayerMovement/Crouch[/Keyboard/c]'
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4544232836375038880}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: SprintPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 641cd816-40e6-41b4-8c3d-04687c349290
-    m_ActionName: 'PlayerMovement/Sprint[/Keyboard/leftShift]'
-  - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 613440d2-7035-4b85-9f35-8fb452244f72
     m_ActionName: 'PlayerMovement/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
@@ -600,22 +599,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4544232836375038880}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: SprintReleased
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b421dba7-edfd-44ca-9819-ab859e2c202f
-    m_ActionName: 'PlayerMovement/SprintEnd[/Keyboard/shift]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: PlayerMovement
