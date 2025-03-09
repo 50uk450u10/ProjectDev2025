@@ -11,26 +11,33 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 input;
     private Rigidbody rb;
-    public float speed; // allows editor to set default speed
+    [SerializeField] float speed; // allows editor to set default speed
     [SerializeField] float sprintSpeed; // allows ediotr to set sprint speed
     public bool isSprinting;
-    public bool isHiding;
     private float playerSpeed; 
-    PlayerInput playerMovement;
     IA_Player movement;
     public UnityAction on_InteractPressed;
     public UnityAction on_InteractReleased;
-    [SerializeField] Inventory myInventory;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        playerMovement = GetComponent<PlayerInput>();
+        //movement = new IA_Player(); This needs to be in OnEnable()
+        //movement.PlayerMovement.Enable(); This needs to be in OnEnable()
+        playerSpeed = speed;
+    }
+
+    private void OnEnable()
+    {
+        
         movement = new IA_Player();
         movement.PlayerMovement.Enable();
-        playerSpeed = speed;
-        isHiding = false;
+    }
+
+    private void OnDisable()
+    {
+        movement.PlayerMovement.Disable();
     }
 
     // Update is called once per frame
@@ -40,7 +47,7 @@ public class PlayerController : MonoBehaviour
         //input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         input = movement.PlayerMovement.Movement.ReadValue<Vector2>();
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)) //We should move this over to the new input system as well
         {
             on_InteractPressed?.Invoke();
         }
