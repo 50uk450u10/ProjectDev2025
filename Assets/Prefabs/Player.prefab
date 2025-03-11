@@ -283,8 +283,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprintSpeed: 10
-  sprintDuration: 3
-  sprintCooldown: 5
+  sprintCost: 33
+  sprintCooldown: 2.5
+  sprintRechargeRate: 20
+  maxStamina: 100
+  currentStamina: 0
+  isSprinting: 0
+  sprintBar: {fileID: 0}
 --- !u!54 &2008052835951661178
 Rigidbody:
   m_ObjectHideFlags: 0
