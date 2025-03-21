@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.DefaultInputActions;
 
@@ -10,9 +11,15 @@ public class PlayerController : MonoBehaviour
     private Vector2 input;
     private Rigidbody rb;
     public float speed; // allows editor to set default speed
-    public float playerSpeed; 
+    [SerializeField] float sprintSpeed; // allows ediotr to set sprint speed
+    public bool isSprinting;
+    public bool isHiding;
+    public float playerSpeed;
     PlayerInput playerMovement;
     IA_Player movement;
+    public UnityAction on_InteractPressed;
+    public UnityAction on_InteractReleased;
+    [SerializeField] Inventory myInventory;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +29,7 @@ public class PlayerController : MonoBehaviour
         movement = new IA_Player();
         movement.PlayerMovement.Enable();
         playerSpeed = speed;
+        isHiding = false;
     }
 
     // Update is called once per frame
@@ -30,6 +38,25 @@ public class PlayerController : MonoBehaviour
         // movement
         //input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         input = movement.PlayerMovement.Movement.ReadValue<Vector2>();
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            on_InteractPressed?.Invoke();
+        }
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            on_InteractReleased?.Invoke();
+        }
+
+        if (isSprinting == true)
+        {
+            playerSpeed = sprintSpeed;
+        }
+        else
+        {
+            playerSpeed = speed;
+        }
     }
     private void FixedUpdate()
     {
@@ -50,5 +77,17 @@ public class PlayerController : MonoBehaviour
         camForward.Normalize();
 
         return input.x * camRight + input.y * camForward;
+    }
+
+    public void SprintPressed()
+    {
+        isSprinting = true;
+        Debug.Log(isSprinting);
+    }
+
+    public void SprintReleased()
+    {
+        isSprinting = false;
+        Debug.Log(isSprinting);
     }
 }
