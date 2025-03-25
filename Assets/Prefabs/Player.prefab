@@ -497,7 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprintSpeed: 10
   sprintCost: 33
-  sprintCooldown: 3
+  sprintCooldown: 2.5
   sprintRechargeRate: 20
   maxStamina: 100
   currentStamina: 0
