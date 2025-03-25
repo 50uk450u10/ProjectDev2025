@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 input;
     private Rigidbody rb;
     public float speed; // allows editor to set default speed
-    [SerializeField] float sprintSpeed; // allows ediotr to set sprint speed
-    public bool isSprinting;
     public bool isHiding;
     public float playerSpeed;
     PlayerInput playerMovement;
@@ -48,15 +46,6 @@ public class PlayerController : MonoBehaviour
         {
             on_InteractReleased?.Invoke();
         }
-
-        if (isSprinting == true)
-        {
-            playerSpeed = sprintSpeed;
-        }
-        else
-        {
-            playerSpeed = speed;
-        }
     }
     private void FixedUpdate()
     {
@@ -77,17 +66,5 @@ public class PlayerController : MonoBehaviour
         camForward.Normalize();
 
         return input.x * camRight + input.y * camForward;
-    }
-
-    public void SprintPressed()
-    {
-        isSprinting = true;
-        Debug.Log(isSprinting);
-    }
-
-    public void SprintReleased()
-    {
-        isSprinting = false;
-        Debug.Log(isSprinting);
     }
 }
