@@ -30,6 +30,11 @@ public class PlayerController : MonoBehaviour
         isHiding = false;
     }
 
+    private void OnDisable()
+    {
+        movement.PlayerMovement.Disable();
+    }
+
     // Update is called once per frame
     void Update()
     {

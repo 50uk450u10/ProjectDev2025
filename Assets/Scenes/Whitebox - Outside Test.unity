@@ -2058,7 +2058,7 @@ Transform:
   m_GameObject: {fileID: 96989276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.732, y: -0.059, z: -0.011}
+  m_LocalPosition: {x: 0.732, y: 0, z: -0.011}
   m_LocalScale: {x: 1, y: 0.23533125, z: 0.109195724}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6127,6 +6127,7 @@ MonoBehaviour:
   onEndInteraction:
     m_PersistentCalls:
       m_Calls: []
+  isHidingSpot: 0
 --- !u!135 &307345405
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19363,6 +19364,7 @@ MonoBehaviour:
   onEndInteraction:
     m_PersistentCalls:
       m_Calls: []
+  isHidingSpot: 0
 --- !u!135 &1057680450
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -24309,6 +24311,7 @@ MonoBehaviour:
   onEndInteraction:
     m_PersistentCalls:
       m_Calls: []
+  isHidingSpot: 0
 --- !u!43 &1231493129
 Mesh:
   m_ObjectHideFlags: 0
@@ -26734,6 +26737,7 @@ MonoBehaviour:
   onEndInteraction:
     m_PersistentCalls:
       m_Calls: []
+  isHidingSpot: 0
 --- !u!135 &1650122465
 SphereCollider:
   m_ObjectHideFlags: 0

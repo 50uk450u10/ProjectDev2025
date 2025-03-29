@@ -11,6 +11,7 @@ public class EnemyAIOutside : MonoBehaviour
     private State currentState;
     private float appearTimer = 0f; //Timer that tracks when monster appears in phase 2
     private NavMeshAgent agent;
+    private bool phase4 = false;
 
     public UnityEvent onContactPlayer; //A unity event to call when the monster is in contact with the player
 
@@ -28,7 +29,7 @@ public class EnemyAIOutside : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentState = State.APPEARING; //This just for testing
+        currentState = State.STALKING; //This just for testing
         IncrementState(); //for testing
         agent = GetComponent<NavMeshAgent>();
     }
@@ -80,7 +81,13 @@ public class EnemyAIOutside : MonoBehaviour
                     }
                 }
                 break;
-            case State.ATTACKING: //Once triggered, the monster will slowly pursue player (Phase 4)
+            case State.ATTACKING: //Once triggered, the monster will slowly pursue player (attempting to kill) (Phase 4)
+                if (!phase4) //use bool so monster only teleports to cave once (not each frame)
+                {
+                    gameObject.transform.position = caveLocation.position; //First thing we do when entering phase is move monster to the cave
+                    phase4 = true;
+                }
+                agent.SetDestination(player.position); //Pursue player, at which point contacting player will "kill" them
 
                 break;
             default:
