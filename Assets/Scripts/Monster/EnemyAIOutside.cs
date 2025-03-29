@@ -12,6 +12,7 @@ public class EnemyAIOutside : MonoBehaviour
     private float appearTimer = 0f; //Timer that tracks when monster appears in phase 2
     private NavMeshAgent agent;
     private bool phase4 = false;
+    private Animator anim;
 
     public UnityEvent onContactPlayer; //A unity event to call when the monster is in contact with the player
 
@@ -32,11 +33,14 @@ public class EnemyAIOutside : MonoBehaviour
         currentState = State.STALKING; //This just for testing
         IncrementState(); //for testing
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        anim.SetFloat("speed", agent.velocity.magnitude);
+
         switch (currentState)
         {
             case State.PASSIVE: //In this phase, the monster does nothing, just sits in cave (Phase 1)

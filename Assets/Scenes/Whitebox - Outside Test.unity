@@ -3999,6 +3999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster_Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 84a24a4cdea879847a002336078f0202, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ccc268545ffb4b34a9de25e8744f01de, type: 2}
     - target: {fileID: 7006249289369118101, guid: 84a24a4cdea879847a002336078f0202, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -25692,7 +25696,7 @@ GameObject:
   - component: {fileID: 1340208651}
   - component: {fileID: 1340208653}
   m_Layer: 0
-  m_Name: Monster
+  m_Name: OutsideMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
