@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashLight: {fileID: 8393343113498479210}
   areaLight: {fileID: 1350252378531753534}
+  FlashlightOn: 1
 --- !u!1 &1336953767378083061
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,7 +464,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  isHiding: 0
   playerSpeed: 0
+  myInventory: {fileID: 0}
 --- !u!114 &4484180831030352836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,8 +496,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprintSpeed: 10
-  sprintDuration: 3
-  sprintCooldown: 5
+  sprintCost: 33
+  sprintCooldown: 2.5
+  sprintRechargeRate: 20
+  maxStamina: 100
+  currentStamina: 0
+  isSprinting: 0
+  sprintBar: {fileID: 0}
 --- !u!54 &2008052835951661178
 Rigidbody:
   m_ObjectHideFlags: 0
