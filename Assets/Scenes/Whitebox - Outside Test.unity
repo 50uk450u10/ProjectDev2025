@@ -13607,7 +13607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2833762891421816175, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3825479000890461453, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -14796,7 +14796,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 4, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &769073063
 MeshRenderer:
@@ -14859,14 +14859,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769073061}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 88.185165, y: 0.474, z: -50.991703}
+  m_LocalRotation: {x: 0, y: 0.2588191, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 88.334, y: 0.474, z: -50.734}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1650122462}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
 --- !u!114 &769073066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14880,6 +14880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemInside: {fileID: 1650122459}
+  requiredItem: BoltCutters
 --- !u!114 &769073067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14897,7 +14898,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 769073066}
         m_TargetAssemblyTypeName: Chest, Assembly-CSharp
-        m_MethodName: OnInteract
+        m_MethodName: OpenChest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14909,7 +14910,19 @@ MonoBehaviour:
         m_CallState: 2
   onEndInteraction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 769073066}
+        m_TargetAssemblyTypeName: Chest, Assembly-CSharp
+        m_MethodName: SetInsideObjectStatus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isHidingSpot: 0
 --- !u!1 &784000536
 GameObject:
@@ -17931,6 +17944,17 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &939242889 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2414289032189143070, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
+  m_PrefabInstance: {fileID: 615837519}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &954133667
 GameObject:
   m_ObjectHideFlags: 0
@@ -19167,17 +19191,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1453781262059407483, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+      propertyPath: sprintBar
+      value: 
+      objectReference: {fileID: 939242889}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.83336
+      value: -117.91579
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.61
+      value: 3.11
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43.632812
+      value: -64.385315
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19206,6 +19234,10 @@ PrefabInstance:
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544232836375038880, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+      propertyPath: speed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4544232836375038880, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: myInventory
@@ -19493,7 +19525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: BoltCutters
   sprite: {fileID: 21300000, guid: 21c6ef59740b2014094fa4fc3d723620, type: 3}
-  obtainable: 0
+  obtainable: 1
 --- !u!114 &1057680449
 MonoBehaviour:
   m_ObjectHideFlags: 0

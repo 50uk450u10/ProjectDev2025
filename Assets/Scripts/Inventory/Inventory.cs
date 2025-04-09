@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] GameObject PanelParent; //Get reference to the UI Panel that holds our items
     [SerializeField] GameObject PickupPrefab; //Get a reference to a default pick up prefab for our UI
 
+
     public void AddItem(Item item) //A public function to be called when adding an item to our inventory
     {
         items.Add(item);
@@ -18,6 +19,7 @@ public class Inventory : MonoBehaviour
         Image myImage = itemAdded.GetComponent<Image>();
         myImage.sprite = item.sprite;
         item.gameObject.SetActive(false);
+
     }
 
     public void RemoveItem(Item item) //public function to be called when removing an item from inventory (currently unused)
