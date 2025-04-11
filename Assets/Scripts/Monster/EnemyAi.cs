@@ -9,24 +9,33 @@ public class EnemyAI : MonoBehaviour
     [Header("References")]
     public Transform player;
     public Transform[] patrolPoints;
+    private PlayerHealth playerHealth; // Reference to player health script
+    private Animator animator; // Optional animator reference
 
     private int currentPatrolIndex = 0;
     private NavMeshAgent agent;
 
     [Header("Detection Settings")]
-    public float detectionRange = 10f; // Sound detection range
-    public float fieldOfView = 120f;   // Vision FOV in degrees
-    public float viewDistance = 15f;   // Vision distance
-    public float stoppingDistance = 1.5f; // Distance before stopping near player
+    public float detectionRange = 10f;
+    public float fieldOfView = 120f;
+    public float viewDistance = 15f;
+    public float stoppingDistance = 1.5f;
 
     [Header("Chase Settings")]
-    public float chaseDuration = 5f; // Adjustable in Inspector
+    public float chaseDuration = 5f;
     private float chaseTimer = 0f;
     private bool isChasing = false;
+
+    [Header("Combat")]
+    public int damageAmount = 10;
+    public float damageCooldown = 1f;
+    private float lastDamageTime;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>(); // Optional
+        playerHealth = player.GetComponent<PlayerHealth>();
 
         if (patrolPoints.Length > 0)
         {
@@ -49,7 +58,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // PATROL
     void PatrolBehavior()
     {
         if (patrolPoints.Length == 0) return;
@@ -61,7 +69,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // CHASE
     void ChaseBehavior()
     {
         if (player != null)
@@ -77,6 +84,14 @@ public class EnemyAI : MonoBehaviour
             if (agent.remainingDistance <= stoppingDistance)
             {
                 agent.isStopped = true;
+
+                if (Time.time - lastDamageTime >= damageCooldown)
+                {
+                    DealDamage();
+                    lastDamageTime = Time.time;
+                }
+
+                // animator?.SetTrigger("Attack"); // Trigger attack animation here
             }
             else
             {
@@ -85,7 +100,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // VISION-BASED DETECTION
     void DetectPlayer()
     {
         if (isChasing) return;
@@ -94,7 +108,6 @@ public class EnemyAI : MonoBehaviour
         float distanceToPlayer = directionToPlayer.magnitude;
         float angleToPlayer = Vector3.Angle(transform.forward, directionToPlayer.normalized);
 
-        // Vision cone check
         if (distanceToPlayer < viewDistance && angleToPlayer < fieldOfView / 2f)
         {
             RaycastHit hit;
@@ -108,7 +121,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // SOUND-BASED DETECTION
     public void HearNoise(Vector3 noisePosition, float noiseRange)
     {
         if (isChasing) return;
@@ -138,7 +150,16 @@ public class EnemyAI : MonoBehaviour
             agent.SetDestination(patrolPoints[currentPatrolIndex].position);
         }
     }
-    void OnDrawGizmosSelected()//FOV Tester
+
+    void DealDamage()
+    {
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damageAmount);
+        }
+    }
+
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, viewDistance);
@@ -150,10 +171,4 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + fovLine1);
         Gizmos.DrawLine(transform.position, transform.position + fovLine2);
     }
-
-
-
-
 }
-
-
