@@ -9,8 +9,8 @@ public class EnemyAI : MonoBehaviour
     [Header("References")]
     public Transform player;
     public Transform[] patrolPoints;
-    private PlayerHealth playerHealth; // Reference to player health script
-    private Animator animator; // Optional animator reference
+    private PlayerHealth playerHealth;
+    private Animator animator;
 
     private int currentPatrolIndex = 0;
     private NavMeshAgent agent;
@@ -24,7 +24,6 @@ public class EnemyAI : MonoBehaviour
     [Header("Chase Settings")]
     public float chaseDuration = 5f;
     private float chaseTimer = 0f;
-    private bool isChasing = false;
 
     [Header("Combat")]
     public int damageAmount = 10;
@@ -34,7 +33,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponentInChildren<Animator>(); // Optional
+        animator = GetComponentInChildren<Animator>();
         playerHealth = player.GetComponent<PlayerHealth>();
 
         if (patrolPoints.Length > 0)
@@ -79,6 +78,7 @@ public class EnemyAI : MonoBehaviour
             if (chaseTimer >= chaseDuration)
             {
                 StopChasing();
+                return;
             }
 
             if (agent.remainingDistance <= stoppingDistance)
@@ -91,7 +91,7 @@ public class EnemyAI : MonoBehaviour
                     lastDamageTime = Time.time;
                 }
 
-                // animator?.SetTrigger("Attack"); // Trigger attack animation here
+                // animator?.SetTrigger("Attack"); // Optional animation trigger
             }
             else
             {
@@ -102,7 +102,7 @@ public class EnemyAI : MonoBehaviour
 
     void DetectPlayer()
     {
-        if (isChasing) return;
+        if (currentState == AIState.Chase) return;
 
         Vector3 directionToPlayer = player.position - transform.position;
         float distanceToPlayer = directionToPlayer.magnitude;
@@ -123,7 +123,7 @@ public class EnemyAI : MonoBehaviour
 
     public void HearNoise(Vector3 noisePosition, float noiseRange)
     {
-        if (isChasing) return;
+        if (currentState == AIState.Chase) return;
 
         float distance = Vector3.Distance(transform.position, noisePosition);
         if (distance <= noiseRange)
@@ -136,14 +136,12 @@ public class EnemyAI : MonoBehaviour
     {
         currentState = AIState.Chase;
         chaseTimer = 0f;
-        isChasing = true;
     }
 
     void StopChasing()
     {
         currentState = AIState.Patrol;
         chaseTimer = 0f;
-        isChasing = false;
 
         if (patrolPoints.Length > 0)
         {
