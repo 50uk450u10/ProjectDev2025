@@ -15189,18 +15189,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1350252378531753534, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
-      propertyPath: m_Range
-      value: 1.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350252378531753534, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
-      propertyPath: m_Intensity
-      value: 1.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350252378531753534, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
-      propertyPath: m_Lightmapping
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.846794
