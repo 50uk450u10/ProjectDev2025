@@ -18473,6 +18473,38 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 812320691920282542, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 812320691920282542, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a24c972c2e181fe4a8e6d913b01bea31, type: 2}
+    - target: {fileID: 2247606588511933287, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247606588511933287, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a24c972c2e181fe4a8e6d913b01bea31, type: 2}
+    - target: {fileID: 4242014781640998785, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242014781640998785, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a24c972c2e181fe4a8e6d913b01bea31, type: 2}
+    - target: {fileID: 4528479615478758854, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528479615478758854, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a24c972c2e181fe4a8e6d913b01bea31, type: 2}
     - target: {fileID: 4686022564703689854, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
       propertyPath: m_Name
       value: bolt_cutters
@@ -18517,6 +18549,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8500967194668122595, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500967194668122595, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a24c972c2e181fe4a8e6d913b01bea31, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28979,6 +29019,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 396078252338603530, guid: f4e1613852f591c43b1b280c5381081c, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 396078252338603530, guid: f4e1613852f591c43b1b280c5381081c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4646a5628a9478442b8a5c4ac31440bc, type: 2}
     - target: {fileID: 438072928491845095, guid: f4e1613852f591c43b1b280c5381081c, type: 3}
       propertyPath: itemName
       value: Key2
@@ -57953,6 +58001,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 185666805292988069, guid: 36347f3afd6b0ce4aa26f9788225a0ee, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 185666805292988069, guid: 36347f3afd6b0ce4aa26f9788225a0ee, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4646a5628a9478442b8a5c4ac31440bc, type: 2}
     - target: {fileID: 2604019671802212138, guid: 36347f3afd6b0ce4aa26f9788225a0ee, type: 3}
       propertyPath: m_Name
       value: Lockbox
