@@ -19,7 +19,6 @@ public class Inventory : MonoBehaviour
         Image myImage = itemAdded.GetComponent<Image>();
         myImage.sprite = item.sprite;
         item.gameObject.SetActive(false);
-
     }
 
     public void RemoveItem(Item item) //public function to be called when removing an item from inventory (currently unused)

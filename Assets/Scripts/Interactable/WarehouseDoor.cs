@@ -15,7 +15,7 @@ public class WarehouseDoor : MonoBehaviour
 
     public void EnterBuilding()
     {
-        foreach (Item k in playerInventory.items) //Loop through our inventory looking for the item to open the chest
+        foreach (Item k in playerInventory.items) //Loop through our inventory looking for the item to open the warehouse door
         {
             if (k.itemName == requiredItem)
             {

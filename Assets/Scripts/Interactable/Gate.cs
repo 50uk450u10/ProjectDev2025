@@ -12,7 +12,7 @@ public class Gate : MonoBehaviour
     void Start()
     {
         i = FindFirstObjectByType<Inventory>(); //Find the inventory (there should only be one) in scene
-        finalPos = new Vector3(gameObject.transform.position.x, 5f, gameObject.transform.position.z); //Set a final position for the gate to transition to on open
+        finalPos = new Vector3(gameObject.transform.position.x, 10f, gameObject.transform.position.z); //Set a final position for the gate to transition to on open
     }
 
     // Update is called once per frame

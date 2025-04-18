@@ -30,9 +30,9 @@ public class EnemyAIOutside : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentState = State.STALKING; //This just for testing
-        IncrementState(); //for testing
+        currentState = State.PASSIVE; //Beginning State
         agent = GetComponent<NavMeshAgent>();
+        agent.enabled = false;
         anim = GetComponentInChildren<Animator>();
     }
 
@@ -55,6 +55,7 @@ public class EnemyAIOutside : MonoBehaviour
                 if (appearTimer >= appearDuration) //If we've waited long enough, move the monster
                 {
                     gameObject.transform.position = appearLocation.position; //Make the monster appear at this location
+                    transform.LookAt(player);
                     appearTimer = 0f; //Reset timer
                 }
                 appearTimer += Time.deltaTime;
@@ -68,21 +69,21 @@ public class EnemyAIOutside : MonoBehaviour
 
                     float dot = Vector3.Dot(playerForwardDirection, directionToMonster);
 
-                    if (dot > 0.5f) //if the monster is in line of sight of the player
+                    if (dot > 0.9f) //if the monster is in line of sight of the player
                     {
                         //sample a random position behind the monster, run to that position
                         agent.SetDestination(caveLocation.position);
                     }
-                    else if (dot < 0.5f) //If monster is not in line of sight of player
+                    else if (dot < 0.9f) //If monster is not in line of sight of player
                     {
                         agent.SetDestination(player.position);
                         
                     }
-                    if (Vector3.Distance(player.position, transform.position) < stalkDistance) //If we are too close to the monster, have them disappear behind the player
-                    {
-                        agent.ResetPath();
-                        gameObject.transform.position = appearLocation.position;
-                    }
+                }
+                if (Vector3.Distance(player.position, transform.position) < stalkDistance) //If we are too close to the monster, have them disappear behind the player
+                {
+                    agent.ResetPath();
+                    gameObject.transform.position = appearLocation.position;
                 }
                 break;
             case State.ATTACKING: //Once triggered, the monster will slowly pursue player (attempting to kill) (Phase 4)
@@ -117,6 +118,10 @@ public class EnemyAIOutside : MonoBehaviour
     {
         Debug.Log(currentState);
         currentState++; //We allow other actions in the game to call this function to change the monster's behavior
+        if (currentState == State.STALKING)
+        {
+            agent.enabled = true;
+        }
         Debug.Log(currentState);
     }
 
