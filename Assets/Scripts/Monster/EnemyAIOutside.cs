@@ -13,8 +13,11 @@ public class EnemyAIOutside : MonoBehaviour
     private NavMeshAgent agent;
     private bool phase4 = false;
     private Animator anim;
+    private Transform currentHidingSpot;
 
     public UnityEvent onContactPlayer; //A unity event to call when the monster is in contact with the player
+
+    [SerializeField] Transform[] hidingLocations;
 
     [SerializeField] Transform caveLocation; //This is where the monster returns to if you are looking at them in phase 3
     [SerializeField] Transform appearLocation; //Where monster appears in phase 2
@@ -35,6 +38,7 @@ public class EnemyAIOutside : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.enabled = false;
         anim = GetComponentInChildren<Animator>();
+        currentHidingSpot = caveLocation;
     }
 
     // Update is called once per frame
@@ -73,8 +77,8 @@ public class EnemyAIOutside : MonoBehaviour
 
                     if (dot > 0.9f) //if the monster is in line of sight of the player
                     {
-                        //sample a random position behind the monster, run to that position
-                        agent.SetDestination(caveLocation.position);
+                        //Run to a hiding spot
+                        agent.SetDestination(currentHidingSpot.position);
                         agent.speed = 8.0f;
                     }
                     else if (dot < 0.9f) //If monster is not in line of sight of player
@@ -87,6 +91,7 @@ public class EnemyAIOutside : MonoBehaviour
                 {
                     agent.ResetPath();
                     gameObject.transform.position = appearLocation.position;
+                    currentHidingSpot = pickNewHidingSpot();
                     pFlashlight.ToggleFlashlight();
                 }
                 break;
@@ -134,5 +139,11 @@ public class EnemyAIOutside : MonoBehaviour
         Debug.Log(currentState);
     }
 
+    private Transform pickNewHidingSpot()
+    {
+        var random = new System.Random();
+        var loc = random.Next(0, hidingLocations.Length);
+        return hidingLocations[loc];
+    }
     #endregion
 }
