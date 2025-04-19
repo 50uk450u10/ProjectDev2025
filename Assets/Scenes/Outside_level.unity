@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.05
@@ -11935,6 +11935,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 503710848522108826, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}
+--- !u!114 &719534298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6431067801660036083, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+  m_PrefabInstance: {fileID: 963305067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 195acc934956e0c4ca72ae1ea216049f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &722304997 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5001691654129443841, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}
@@ -15348,15 +15359,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -46.846794
+      value: -47.136497
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.1
+      value: 2.79
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 119.11
+      value: 118.47154
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16691,6 +16702,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2070995552}
+    - target: {fileID: 5088474417680871512, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
+      propertyPath: pFlashlight
+      value: 
+      objectReference: {fileID: 719534298}
     - target: {fileID: 5088474417680871512, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: caveLocation
       value: 
@@ -55522,7 +55537,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warehouseScene: Warehouse_base
-  requiredItem: Key2
+  requiredItem1: Key1
+  requiredItem2: Key2
 --- !u!1 &1944758827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}

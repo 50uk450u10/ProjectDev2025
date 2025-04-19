@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class WarehouseDoor : MonoBehaviour
 {
     [SerializeField] string warehouseScene;
-    [SerializeField] string requiredItem;
+    [SerializeField] string requiredItem1;
+    [SerializeField] string requiredItem2;
 
     private Inventory playerInventory;
     private void Start()
@@ -15,12 +16,26 @@ public class WarehouseDoor : MonoBehaviour
 
     public void EnterBuilding()
     {
+        bool hasItem1 = false;
+        bool hasItem2 = false;
+
         foreach (Item k in playerInventory.items) //Loop through our inventory looking for the item to open the warehouse door
         {
-            if (k.itemName == requiredItem)
+            if (k.itemName == requiredItem1)
             {
-                SceneManager.LoadScene(warehouseScene); //Load into the warehouse
+                hasItem1 = true;
+            }
+
+            if (k.itemName == requiredItem2)
+            {
+                hasItem2 = true;
             }
         }
+
+        if (hasItem1 && hasItem2)
+        {
+            SceneManager.LoadScene(warehouseScene); //Load into the warehouse
+        }
+
     }
 }

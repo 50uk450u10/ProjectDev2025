@@ -23,6 +23,7 @@ public class EnemyAIOutside : MonoBehaviour
     [SerializeField] float disappearDistance = 100f; //How close you can get before monster disappears
     [SerializeField] float stalkDistance = 50f; //How close monster gets in phase 3
     [SerializeField] Transform player; //Hook in our player for calculations
+    [SerializeField] Flashlight pFlashlight;
 
     #endregion
 
@@ -50,6 +51,7 @@ public class EnemyAIOutside : MonoBehaviour
                 if (Vector3.Distance(player.position, transform.position) <= disappearDistance) //Check to make sure the player isn't too close to the monster
                 {
                     gameObject.transform.position = disappearLocation.position; //Move the monster far away and out of sight
+                    pFlashlight.ToggleFlashlight();
                     appearTimer = 0f;
                 }
                 if (appearTimer >= appearDuration) //If we've waited long enough, move the monster
@@ -73,17 +75,19 @@ public class EnemyAIOutside : MonoBehaviour
                     {
                         //sample a random position behind the monster, run to that position
                         agent.SetDestination(caveLocation.position);
+                        agent.speed = 8.0f;
                     }
                     else if (dot < 0.9f) //If monster is not in line of sight of player
                     {
                         agent.SetDestination(player.position);
-                        
+                        agent.speed = 3.0f;
                     }
                 }
                 if (Vector3.Distance(player.position, transform.position) < stalkDistance) //If we are too close to the monster, have them disappear behind the player
                 {
                     agent.ResetPath();
                     gameObject.transform.position = appearLocation.position;
+                    pFlashlight.ToggleFlashlight();
                 }
                 break;
             case State.ATTACKING: //Once triggered, the monster will slowly pursue player (attempting to kill) (Phase 4)
