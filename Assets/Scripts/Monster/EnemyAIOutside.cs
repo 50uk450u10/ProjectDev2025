@@ -121,6 +121,11 @@ public class EnemyAIOutside : MonoBehaviour
         if (currentState == State.STALKING)
         {
             agent.enabled = true;
+            agent.speed = 3.0f;
+        }
+        else if (currentState == State.ATTACKING)
+        {
+            agent.speed = 6.0f;
         }
         Debug.Log(currentState);
     }

@@ -24,6 +24,7 @@ public class Chest : MonoBehaviour
                 {
                     open = true;
                     gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    itemInside.obtainable = true;
                 }
                 else if (open)
                 {
@@ -34,7 +35,7 @@ public class Chest : MonoBehaviour
         }
     }
 
-    public void SetInsideObjectStatus()
+    void SetInsideObjectStatus()
     {
         itemInside.obtainable = true;
     }
