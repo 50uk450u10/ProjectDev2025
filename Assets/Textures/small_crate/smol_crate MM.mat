@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: shelf MM
+  m_Name: smol_crate MM
   m_Shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,7 +28,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 499f0a795aa93384e9755224defef2f7, type: 3}
+        m_Texture: {fileID: 2800000, guid: aaa5655cf4720ea49b4f7209b7e19294, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -48,11 +48,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9ad3414da94d1044ba862d5d75648784, type: 3}
+        m_Texture: {fileID: 2800000, guid: 48d76082612c28d4ea410e894d743ce4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 43ae254c532477b49ba4b5d5b7e4d3a6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0163a2f10d38d214687ef8b45a56957c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -60,11 +60,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 7e170a9f4e3a3bc4496a8a8cd8749ba2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 614417088a5bd5e469caeede5ebaa845, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: 32a4dec2ba1ae744bbb9b88e29291453, type: 3}
+        m_Texture: {fileID: 2800000, guid: f45a4ec27109b8f47a3b7d21378290d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
