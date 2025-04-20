@@ -129,6 +129,7 @@ public class EnemyAIOutside : MonoBehaviour
         currentState++; //We allow other actions in the game to call this function to change the monster's behavior
         if (currentState == State.STALKING)
         {
+            gameObject.transform.position = currentHidingSpot.position;
             agent.enabled = true;
             agent.speed = 3.0f;
         }

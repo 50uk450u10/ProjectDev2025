@@ -29,24 +29,25 @@ MonoBehaviour:
     - Pasture
     - Vegetation
     - Foliage
+    - Ground
     SoftSteps:
-    - {fileID: 8300000, guid: 310261dfd2cd5cc4497fe13ec3423fa0, type: 3}
     - {fileID: 8300000, guid: 4519b830d875b8a4ea39d0624dcb194f, type: 3}
+    - {fileID: 8300000, guid: 218704fe714ba5540a025b84226883d4, type: 3}
+    - {fileID: 8300000, guid: 310261dfd2cd5cc4497fe13ec3423fa0, type: 3}
     - {fileID: 8300000, guid: 1cb3373e957e18943af3abc0b02be01f, type: 3}
     - {fileID: 8300000, guid: 146763bbe95e7404ba144405abb1e428, type: 3}
-    - {fileID: 8300000, guid: 218704fe714ba5540a025b84226883d4, type: 3}
     MediumSteps:
-    - {fileID: 8300000, guid: ce3f9a4b74f2f7447b8c6adfabedef41, type: 3}
-    - {fileID: 8300000, guid: 20be303d0de0f854e8c7aefa7c7a383b, type: 3}
-    - {fileID: 8300000, guid: 3f49f964c0180e74b8ff85bcc5f50278, type: 3}
-    - {fileID: 8300000, guid: 6bb4c9ee2372f3a46bafd983af018fe7, type: 3}
     - {fileID: 8300000, guid: 4931ca1b4b6b6d24fbf68b2cbb81bd51, type: 3}
+    - {fileID: 8300000, guid: 3f49f964c0180e74b8ff85bcc5f50278, type: 3}
+    - {fileID: 8300000, guid: ce3f9a4b74f2f7447b8c6adfabedef41, type: 3}
+    - {fileID: 8300000, guid: 6bb4c9ee2372f3a46bafd983af018fe7, type: 3}
+    - {fileID: 8300000, guid: 20be303d0de0f854e8c7aefa7c7a383b, type: 3}
     HardSteps:
+    - {fileID: 8300000, guid: e9fc43d9b0f66e148aa6981e948a6e57, type: 3}
     - {fileID: 8300000, guid: 148bd6f372c0f7c4ab0c6053f3ab32cb, type: 3}
+    - {fileID: 8300000, guid: 8e44a2603ff5bcb41bf17b25dda0a313, type: 3}
     - {fileID: 8300000, guid: 882865a2d8d8f074c9a8099efa30e3b0, type: 3}
     - {fileID: 8300000, guid: 7705cad0d96e5704f992d1c92a1dcb36, type: 3}
-    - {fileID: 8300000, guid: e9fc43d9b0f66e148aa6981e948a6e57, type: 3}
-    - {fileID: 8300000, guid: 8e44a2603ff5bcb41bf17b25dda0a313, type: 3}
     Scuffs:
     - {fileID: 8300000, guid: 7a503740dab029445a64ce67d06f1d45, type: 3}
     - {fileID: 8300000, guid: e769a9d770dafd549acc769bbb272af4, type: 3}
@@ -74,24 +75,25 @@ MonoBehaviour:
     - Terrazzo
     - Masonry
     - Grid
+    - Warehouse
     SoftSteps:
-    - {fileID: 8300000, guid: 0e177e03d5e598346b55a7b5b338308d, type: 3}
+    - {fileID: 8300000, guid: 006fd0ef608d5004ca9752070e7a9421, type: 3}
     - {fileID: 8300000, guid: ad067f9a92288174f8feef9b6a16fd77, type: 3}
     - {fileID: 8300000, guid: 91907eb07a9a90e40817537ee84ba98c, type: 3}
+    - {fileID: 8300000, guid: 0e177e03d5e598346b55a7b5b338308d, type: 3}
     - {fileID: 8300000, guid: 6fd161b3f607de248a3b6a37b9b9f60f, type: 3}
-    - {fileID: 8300000, guid: 006fd0ef608d5004ca9752070e7a9421, type: 3}
     MediumSteps:
-    - {fileID: 8300000, guid: 2dc25fa946cbf0f419c13b9fa1fba674, type: 3}
     - {fileID: 8300000, guid: 0d606a27abee80548b405ade20115e12, type: 3}
+    - {fileID: 8300000, guid: 2801a1017e974254cbb158957ab0d308, type: 3}
     - {fileID: 8300000, guid: 93d040c6acb16764f8fff9ec9417451d, type: 3}
     - {fileID: 8300000, guid: 98032f1f583fba94ca68e490463188f5, type: 3}
-    - {fileID: 8300000, guid: 2801a1017e974254cbb158957ab0d308, type: 3}
+    - {fileID: 8300000, guid: 2dc25fa946cbf0f419c13b9fa1fba674, type: 3}
     HardSteps:
-    - {fileID: 8300000, guid: a970a80f11261d04a8b2f870447157d9, type: 3}
-    - {fileID: 8300000, guid: c6a68aed5289e364f8b5c85e68e02642, type: 3}
-    - {fileID: 8300000, guid: 1bce76496a9e95c49b57dca3da94e923, type: 3}
     - {fileID: 8300000, guid: 397c1bbb1485a9a4a880e8352cc1eb69, type: 3}
+    - {fileID: 8300000, guid: 1bce76496a9e95c49b57dca3da94e923, type: 3}
+    - {fileID: 8300000, guid: c6a68aed5289e364f8b5c85e68e02642, type: 3}
     - {fileID: 8300000, guid: 28861c8eecebad74e879d87f99fd5d07, type: 3}
+    - {fileID: 8300000, guid: a970a80f11261d04a8b2f870447157d9, type: 3}
     Scuffs:
     - {fileID: 8300000, guid: 511b2c2b2554f404587352f7dda05a7b, type: 3}
     - {fileID: 8300000, guid: 60cd07d8d76a41f40a0f2189728387a0, type: 3}
@@ -274,17 +276,17 @@ MonoBehaviour:
     - Foil
     - Plate
     SoftSteps:
+    - {fileID: 8300000, guid: e289c4e48d853cc40ac7192fd44b5ed6, type: 3}
     - {fileID: 8300000, guid: e6be0e3f52c46b048a0045d811186de9, type: 3}
     - {fileID: 8300000, guid: a71932c949d2460489ce74136d2b5081, type: 3}
     - {fileID: 8300000, guid: 759f684e9a9b8154398794c6a33ef617, type: 3}
-    - {fileID: 8300000, guid: e289c4e48d853cc40ac7192fd44b5ed6, type: 3}
     - {fileID: 8300000, guid: 49eab6c4265fa044abbedf418044d195, type: 3}
     MediumSteps:
+    - {fileID: 8300000, guid: a3c399d34c90ecd459044b61556cb26d, type: 3}
+    - {fileID: 8300000, guid: 61d03bcc708164e409283ea540f11d98, type: 3}
     - {fileID: 8300000, guid: e116b650cf5eb6942b3bc641ce86c01a, type: 3}
     - {fileID: 8300000, guid: ce1a1025a75463e4f9312fb60f0c0ba3, type: 3}
-    - {fileID: 8300000, guid: a3c399d34c90ecd459044b61556cb26d, type: 3}
     - {fileID: 8300000, guid: cacb31a381fbed94fa6247f4ebe557fb, type: 3}
-    - {fileID: 8300000, guid: 61d03bcc708164e409283ea540f11d98, type: 3}
     HardSteps:
     - {fileID: 8300000, guid: 2f25fec1ea9de7842be22130c331aefb, type: 3}
     - {fileID: 8300000, guid: 1f08ebe2d11f41e428b4a1d92484f9c1, type: 3}
