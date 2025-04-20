@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 input;
     private Rigidbody rb;
-    public float speed; // allows editor to set default speed
     public bool isHiding;
     public float playerSpeed;
     PlayerInput playerMovement;
@@ -26,7 +25,6 @@ public class PlayerController : MonoBehaviour
         playerMovement = GetComponent<PlayerInput>();
         movement = new IA_Player();
         movement.PlayerMovement.Enable();
-        playerSpeed = speed;
         isHiding = false;
     }
 

@@ -45,8 +45,8 @@ public class HideScript : MonoBehaviour
 
                 playerPos = player.transform.position;
                 player.transform.position = spotPos;
-                playerSpeed = player.speed;
-                player.speed = hideValue;
+                playerSpeed = player.playerSpeed;
+                player.playerSpeed = hideValue;
                 player.isHiding = true;
             }
 
@@ -58,7 +58,7 @@ public class HideScript : MonoBehaviour
                 //if (flashlight != null) { flashlight.FlashlightOn = true; }
 
                 player.transform.position = playerPos;
-                player.speed = playerSpeed;
+                player.playerSpeed = playerSpeed;
                 player.isHiding = false;
             }
         }
