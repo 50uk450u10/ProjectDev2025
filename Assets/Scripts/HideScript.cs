@@ -6,7 +6,8 @@ public class HideScript : MonoBehaviour
     PlayerController player = null;
     Interactable obj;
     EnemyAI enemy;
-    Flashlight flashlight;
+    public GameObject playerhand;
+    //Flashlight flashlight;
     Vector3 spotPos;
     Vector3 playerPos;
     float playerSpeed;
@@ -35,10 +36,12 @@ public class HideScript : MonoBehaviour
                 {
                     enemyDetect = enemy.detectionRange;
                     enemy.detectionRange = hideValue;
+                    enemy.currentState = EnemyAI.AIState.Patrol;
                 }
 
-                flashlight = FindAnyObjectByType<Flashlight>();
-                if (flashlight != null) { Debug.Log("flash"); flashlight.FlashlightOn = false; }
+                //flashlight = FindAnyObjectByType<Flashlight>();
+                //if (flashlight != null) { Debug.Log("flash"); flashlight.FlashlightOn = false; }
+                if(playerhand != null) { playerhand.SetActive(false); }
 
                 playerPos = player.transform.position;
                 player.transform.position = spotPos;
@@ -51,7 +54,8 @@ public class HideScript : MonoBehaviour
             {
                 if (enemy != null) { enemy.detectionRange = enemyDetect; }
 
-                if (flashlight != null) { flashlight.FlashlightOn = true; }
+                if (playerhand != null) { playerhand.SetActive (true); }
+                //if (flashlight != null) { flashlight.FlashlightOn = true; }
 
                 player.transform.position = playerPos;
                 player.speed = playerSpeed;
