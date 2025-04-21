@@ -48,7 +48,7 @@ public class SprintHandler : MonoBehaviour
                 isSprinting = false;
                 playerController.playerSpeed = playerController.speed;
             }
-            //sprintBar.fillAmount = currentStamina / maxStamina;
+            sprintBar.fillAmount = currentStamina / maxStamina;
             if (recharge != null)
             {
                 StopCoroutine(recharge);
@@ -68,7 +68,7 @@ public class SprintHandler : MonoBehaviour
             {
                 currentStamina = maxStamina;
             }
-            //sprintBar.fillAmount = currentStamina / maxStamina;
+            sprintBar.fillAmount = currentStamina / maxStamina;
             yield return new WaitForSeconds(.05f);
         }
     }
