@@ -5115,6 +5115,58 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7035457377185098319, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}
+--- !u!1 &283287048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 283287049}
+  - component: {fileID: 283287050}
+  m_Layer: 0
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &283287049
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283287048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1912644120}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &283287050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283287048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda03a8b6d8727548bb3aba981c57a95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  itemsInInventory: 0
+  PanelParent: {fileID: 0}
+  PickupPrefab: {fileID: 0}
 --- !u!1 &283757953 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5095821235698298106, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}
@@ -12229,6 +12281,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2494253428307173227, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1773517577}
+    - targetCorrespondingSourceObject: {fileID: 2494253428307173227, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 283287049}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
 --- !u!1 &704030567 stripped
