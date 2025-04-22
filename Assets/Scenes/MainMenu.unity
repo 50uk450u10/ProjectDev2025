@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ed814cf552a7438d1929e5346014c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: FirstPersonTest
+  sceneToLoad: Outside_level
 --- !u!1 &365469152
 GameObject:
   m_ObjectHideFlags: 0
