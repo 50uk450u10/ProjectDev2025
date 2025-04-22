@@ -20,8 +20,12 @@ public class PlayerDeath : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("You've been killed by The Monster!");
+        //Debug.Log("You've been killed by The Monster!");
 
-        SceneManager.LoadScene(currentScene); //Reload the current scene (from the beginning)
+        //This will load the current scene so that you can restart
+        //SceneManager.LoadScene(currentScene); //Reload the current scene (from the beginning)
+
+        //This will load the main menu
+        SceneManager.LoadScene("MainMenu");
     }
 }
