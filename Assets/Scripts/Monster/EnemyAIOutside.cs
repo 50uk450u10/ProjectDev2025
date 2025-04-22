@@ -18,7 +18,9 @@ public class EnemyAIOutside : MonoBehaviour
     public UnityEvent onContactPlayer; //A unity event to call when the monster is in contact with the player
 
     [SerializeField] Transform[] hidingLocations;
-
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip spawnClip;
+    [SerializeField] AudioClip phase4Clip;
     [SerializeField] Transform caveLocation; //This is where the monster returns to if you are looking at them in phase 3
     [SerializeField] Transform appearLocation; //Where monster appears in phase 2
     [SerializeField] float appearDuration = 30f;
@@ -39,6 +41,7 @@ public class EnemyAIOutside : MonoBehaviour
         agent.enabled = false;
         anim = GetComponentInChildren<Animator>();
         currentHidingSpot = caveLocation;
+        source.PlayOneShot(spawnClip);
     }
 
     // Update is called once per frame
@@ -125,7 +128,6 @@ public class EnemyAIOutside : MonoBehaviour
 
     public void IncrementState() //function to trigger our monster's state updates (since game actions will be the triggers)
     {
-        Debug.Log(currentState);
         currentState++; //We allow other actions in the game to call this function to change the monster's behavior
         if (currentState == State.STALKING)
         {
@@ -135,6 +137,7 @@ public class EnemyAIOutside : MonoBehaviour
         }
         else if (currentState == State.ATTACKING)
         {
+            source.PlayOneShot(phase4Clip);
             agent.speed = 6.0f;
         }
         Debug.Log(currentState);
