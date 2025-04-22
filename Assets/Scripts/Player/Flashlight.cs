@@ -16,23 +16,29 @@ public class Flashlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && FlashlightOn == true)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("F key was pressed.");
+            ToggleFlashlight();
+        }
+
+    }
+
+
+    public void ToggleFlashlight()
+    {
+        if (FlashlightOn == true)
+        {
             areaLight.intensity = 0.0f;
             flashLight.intensity = 0.0f;
             FlashlightOn = false;
         }
 
-        else if (Input.GetKeyDown(KeyCode.F) && FlashlightOn == false)
+        else
         {
-
-            Debug.Log("F key was pressed.");
             areaLight.intensity = 1.75f;
             flashLight.intensity = 1.0f;
             FlashlightOn = true;
         }
 
-    }
-
+}
 }

@@ -13,8 +13,11 @@ public class EnemyAIOutside : MonoBehaviour
     private NavMeshAgent agent;
     private bool phase4 = false;
     private Animator anim;
+    private Transform currentHidingSpot;
 
     public UnityEvent onContactPlayer; //A unity event to call when the monster is in contact with the player
+
+    [SerializeField] Transform[] hidingLocations;
 
     [SerializeField] Transform caveLocation; //This is where the monster returns to if you are looking at them in phase 3
     [SerializeField] Transform appearLocation; //Where monster appears in phase 2
@@ -23,6 +26,7 @@ public class EnemyAIOutside : MonoBehaviour
     [SerializeField] float disappearDistance = 100f; //How close you can get before monster disappears
     [SerializeField] float stalkDistance = 50f; //How close monster gets in phase 3
     [SerializeField] Transform player; //Hook in our player for calculations
+    [SerializeField] Flashlight pFlashlight;
 
     #endregion
 
@@ -34,6 +38,7 @@ public class EnemyAIOutside : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.enabled = false;
         anim = GetComponentInChildren<Animator>();
+        currentHidingSpot = caveLocation;
     }
 
     // Update is called once per frame
@@ -50,6 +55,7 @@ public class EnemyAIOutside : MonoBehaviour
                 if (Vector3.Distance(player.position, transform.position) <= disappearDistance) //Check to make sure the player isn't too close to the monster
                 {
                     gameObject.transform.position = disappearLocation.position; //Move the monster far away and out of sight
+                    pFlashlight.ToggleFlashlight();
                     appearTimer = 0f;
                 }
                 if (appearTimer >= appearDuration) //If we've waited long enough, move the monster
@@ -71,19 +77,22 @@ public class EnemyAIOutside : MonoBehaviour
 
                     if (dot > 0.9f) //if the monster is in line of sight of the player
                     {
-                        //sample a random position behind the monster, run to that position
-                        agent.SetDestination(caveLocation.position);
+                        //Run to a hiding spot
+                        agent.SetDestination(currentHidingSpot.position);
+                        agent.speed = 8.0f;
                     }
                     else if (dot < 0.9f) //If monster is not in line of sight of player
                     {
                         agent.SetDestination(player.position);
-                        
+                        agent.speed = 3.0f;
                     }
                 }
                 if (Vector3.Distance(player.position, transform.position) < stalkDistance) //If we are too close to the monster, have them disappear behind the player
                 {
                     agent.ResetPath();
                     gameObject.transform.position = appearLocation.position;
+                    currentHidingSpot = pickNewHidingSpot();
+                    pFlashlight.ToggleFlashlight();
                 }
                 break;
             case State.ATTACKING: //Once triggered, the monster will slowly pursue player (attempting to kill) (Phase 4)
@@ -121,9 +130,20 @@ public class EnemyAIOutside : MonoBehaviour
         if (currentState == State.STALKING)
         {
             agent.enabled = true;
+            agent.speed = 3.0f;
+        }
+        else if (currentState == State.ATTACKING)
+        {
+            agent.speed = 6.0f;
         }
         Debug.Log(currentState);
     }
 
+    private Transform pickNewHidingSpot()
+    {
+        var random = new System.Random();
+        var loc = random.Next(0, hidingLocations.Length);
+        return hidingLocations[loc];
+    }
     #endregion
 }
