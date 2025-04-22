@@ -1,12 +1,16 @@
+using TMPro;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class WarehouseDoor : MonoBehaviour
 {
     [SerializeField] string warehouseScene;
     [SerializeField] string requiredItem1;
     [SerializeField] string requiredItem2;
+    [SerializeField] TMP_Text PopupText;
 
     private Inventory playerInventory;
     private void Start()
@@ -32,10 +36,22 @@ public class WarehouseDoor : MonoBehaviour
             }
         }
 
+        if (!hasItem1 && !hasItem2)
+        {
+            //Output to UI that you can not interact yet
+            PopupText.text = "You cannot interact with that yet";
+            StartCoroutine(TextUpdate());
+        }
+
         if (hasItem1 && hasItem2)
         {
             SceneManager.LoadScene(warehouseScene); //Load into the warehouse
         }
 
+    }
+    private IEnumerator TextUpdate()
+    {
+        yield return new WaitForSeconds(2.0f);
+        PopupText.text = "";
     }
 }

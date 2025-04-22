@@ -1,12 +1,11 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
     private PlayerController player = null;
-    [SerializeField] Material baseMaterial;
-    private Material instancedMaterial;
+    //[SerializeField] Material baseMaterial;
+    //private Material instancedMaterial;
     public UnityEvent onPerformInteraction;
     public UnityEvent onEndInteraction;
     public bool isHidingSpot;
@@ -17,8 +16,8 @@ public class Interactable : MonoBehaviour
     {
         var canvasParent = GameObject.Find("InteractionCanvas");
         interactCanvas = canvasParent.GetComponent<Canvas>();
-        instancedMaterial = new Material(baseMaterial);
-        GetComponent<Renderer>().material = instancedMaterial;
+        //instancedMaterial = new Material(baseMaterial);
+        //GetComponent<Renderer>().material = instancedMaterial;
     }
 
     //Invoke Unity Event to perform interaction logic
@@ -36,7 +35,7 @@ public class Interactable : MonoBehaviour
     {
         player = other.GetComponent<PlayerController>();
         interactCanvas.enabled = true;
-        ToggleHighlight(instancedMaterial, true);
+        //ToggleHighlight(instancedMaterial, true);
 
         if (player != null)
         {
@@ -50,7 +49,7 @@ public class Interactable : MonoBehaviour
     {
         player = other.GetComponent<PlayerController>();
         interactCanvas.enabled = false;
-        ToggleHighlight(instancedMaterial, false);
+        //ToggleHighlight(instancedMaterial, false);
 
         if (player != null)
         {
@@ -69,7 +68,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    public void ToggleHighlight(Material instancedMaterial, bool show)
+    /*public void ToggleHighlight(Material instancedMaterial, bool show)
     {
         if (show)
         {
@@ -79,5 +78,5 @@ public class Interactable : MonoBehaviour
         {
             instancedMaterial.DisableKeyword("_EMISSION");
         }
-    }
+    }*/
 }

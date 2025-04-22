@@ -41,7 +41,7 @@ public class EnemyAIOutside : MonoBehaviour
         agent.enabled = false;
         anim = GetComponentInChildren<Animator>();
         currentHidingSpot = caveLocation;
-        source.PlayOneShot(spawnClip);
+        source.Play();
     }
 
     // Update is called once per frame
@@ -137,6 +137,7 @@ public class EnemyAIOutside : MonoBehaviour
         }
         else if (currentState == State.ATTACKING)
         {
+            source.Stop();
             source.PlayOneShot(phase4Clip);
             agent.speed = 6.0f;
         }

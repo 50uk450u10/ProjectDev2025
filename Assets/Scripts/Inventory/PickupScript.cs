@@ -3,6 +3,7 @@ using UnityEngine;
 public class PickupScript : MonoBehaviour
 {
     EnemyAIOutside monster;
+    Canvas interactCanvas;
 
     private Inventory playerInventory;
 
@@ -10,6 +11,8 @@ public class PickupScript : MonoBehaviour
     {
         playerInventory = FindFirstObjectByType<Inventory>();
         monster = FindAnyObjectByType<EnemyAIOutside>();
+        var canvasParent = GameObject.Find("InteractionCanvas");
+        interactCanvas = canvasParent.GetComponent<Canvas>();
     }
 
     public void OnInteraction()
@@ -23,6 +26,7 @@ public class PickupScript : MonoBehaviour
             Debug.Log(item.itemName + " found!");
             Destroy(gameObject); //Destroy what we picked up in the game world
             monster.IncrementState();
+            interactCanvas.enabled = false;
         }
         else if (item.obtainable == false)
         {
