@@ -37,7 +37,7 @@ public class WarehouseDoor : MonoBehaviour
         if (!hasItem1 || !hasItem2)
         {
             //Output to UI that you can not interact yet
-            PopupText.text = "You cannot interact with that yet";
+            PopupText.text = "Locked. There is a top and bottom lock...";
             StartCoroutine(TextUpdate());
         }
 

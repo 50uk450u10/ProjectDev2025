@@ -15,6 +15,7 @@ public class Chest : MonoBehaviour
     private void Start()
     {
         playerInventory = FindFirstObjectByType<Inventory>();
+        anim = GetComponent<Animator>();
     }
 
     public void OpenChest()
@@ -28,8 +29,9 @@ public class Chest : MonoBehaviour
                 if (!open) //Once we know we can open the chest, check to see if chest is already open, if not, set our values
                 {
                     open = true;
-                    gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    anim.SetBool("Open", true);
                     itemInside.obtainable = true;
+                    itemInside.gameObject.GetComponent<SphereCollider>().enabled = true;
                     reqItem = true;
                     return;
                 }
@@ -45,7 +47,7 @@ public class Chest : MonoBehaviour
         if (!reqItem)
         {
             //Output to UI that you can not interact yet
-            PopupText.text = "You cannot interact with that yet";
+            PopupText.text = "The lock looks flimsy...";
             StartCoroutine(TextUpdate());
         }
     }
