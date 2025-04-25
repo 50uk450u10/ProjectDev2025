@@ -10503,7 +10503,7 @@ GameObject:
   - component: {fileID: 365469155}
   - component: {fileID: 365469154}
   m_Layer: 5
-  m_Name: PAN_SelectedButton
+  m_Name: PAN_ SelectedButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
