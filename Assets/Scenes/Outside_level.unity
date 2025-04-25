@@ -19027,9 +19027,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2070995553}
     - target: {fileID: 5088474417680871512, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
+      propertyPath: roarClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a7f229f16837a1438bd5841cdb34624, type: 3}
+    - target: {fileID: 5088474417680871512, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: spawnClip
       value: 
       objectReference: {fileID: 8300000, guid: 1be5c290c4af3de49bcca249a07679d1, type: 3}
+    - target: {fileID: 5088474417680871512, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
+      propertyPath: attackClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a6f176cfa7dafed4188e84a3f1b5a31f, type: 3}
     - target: {fileID: 5088474417680871512, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: phase4Clip
       value: 

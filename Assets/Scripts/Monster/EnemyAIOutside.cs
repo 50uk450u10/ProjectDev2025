@@ -22,6 +22,7 @@ public class EnemyAIOutside : MonoBehaviour
     [SerializeField] AudioClip spawnClip;
     [SerializeField] AudioClip phase4Clip;
     [SerializeField] AudioClip roarClip;
+    [SerializeField] AudioClip attackClip;
     [SerializeField] Transform caveLocation; //This is where the monster returns to if you are looking at them in phase 3
     [SerializeField] Transform appearLocation; //Where monster appears in phase 2
     [SerializeField] float appearDuration = 30f;
@@ -130,7 +131,10 @@ public class EnemyAIOutside : MonoBehaviour
     public void IncrementState() //function to trigger our monster's state updates (since game actions will be the triggers)
     {
         currentState++; //We allow other actions in the game to call this function to change the monster's behavior
-        source.PlayOneShot(roarClip);
+        if (currentState != State.ATTACKING)
+        {
+            source.PlayOneShot(roarClip);
+        }
         if (currentState == State.STALKING)
         {
             gameObject.transform.position = currentHidingSpot.position;
@@ -140,6 +144,7 @@ public class EnemyAIOutside : MonoBehaviour
         else if (currentState == State.ATTACKING)
         {
             source.Stop();
+            source.PlayOneShot(attackClip);
             source.PlayOneShot(phase4Clip);
             agent.speed = 6.0f;
         }
