@@ -8,6 +8,7 @@ public class WarehouseDoor : MonoBehaviour
     [SerializeField] string warehouseScene; //Scene to change to when you interact with the door
     [SerializeField] string requiredItem1;
     [SerializeField] string requiredItem2;
+    [SerializeField] AudioClip openClip;
     [SerializeField] TMP_Text PopupText; //This is needed to connect UI to interaction prompt
 
     private Inventory playerInventory;
@@ -43,7 +44,8 @@ public class WarehouseDoor : MonoBehaviour
 
         if (hasItem1 && hasItem2)
         {
-            SceneManager.LoadScene(warehouseScene); //Load into the warehouse
+            gameObject.GetComponent<AudioSource>().PlayOneShot(openClip);
+            StartCoroutine(PauseForSound());
         }
 
     }
@@ -51,5 +53,11 @@ public class WarehouseDoor : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         PopupText.text = "";
+    }
+
+    private IEnumerator PauseForSound()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene(warehouseScene); //Load into the warehouse
     }
 }
