@@ -28,8 +28,9 @@ public class Flashlight : MonoBehaviour
 
     public void ToggleFlashlight()
     {
-        AS.PlayOneShot(flashlightClip);
+        AS.PlayOneShot(flashlightClip); //Plays flashlight noise
 
+        //Handles turning on and off the light whenever the function is called
         if (FlashlightOn == true)
         {
             areaLight.intensity = 0.0f;

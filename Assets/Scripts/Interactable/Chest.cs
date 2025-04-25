@@ -52,15 +52,11 @@ public class Chest : MonoBehaviour
         }
     }
 
-    private IEnumerator TextUpdate()
+    private IEnumerator TextUpdate() //Allows clearing the popup prompt after 2 seconds
     {
         yield return new WaitForSeconds(2.0f);
         PopupText.text = "";
 
     }
 
-    void SetInsideObjectStatus()
-    {
-        itemInside.obtainable = true;
-    }
 }

@@ -5,15 +5,15 @@ using System.Collections;
 
 public class WarehouseDoor : MonoBehaviour
 {
-    [SerializeField] string warehouseScene;
+    [SerializeField] string warehouseScene; //Scene to change to when you interact with the door
     [SerializeField] string requiredItem1;
     [SerializeField] string requiredItem2;
-    [SerializeField] TMP_Text PopupText;
+    [SerializeField] TMP_Text PopupText; //This is needed to connect UI to interaction prompt
 
     private Inventory playerInventory;
     private void Start()
     {
-        playerInventory = FindFirstObjectByType<Inventory>();
+        playerInventory = FindFirstObjectByType<Inventory>(); //There should only be one inventory in the scene
     }
 
     public void EnterBuilding()
@@ -34,7 +34,7 @@ public class WarehouseDoor : MonoBehaviour
             }
         }
 
-        if (!hasItem1 || !hasItem2)
+        if (!hasItem1 || !hasItem2) //If you don't have either required item, prompt player
         {
             //Output to UI that you can not interact yet
             PopupText.text = "Locked. There is a top and bottom lock...";
@@ -47,7 +47,7 @@ public class WarehouseDoor : MonoBehaviour
         }
 
     }
-    private IEnumerator TextUpdate()
+    private IEnumerator TextUpdate() //This allows clearing of the popup text after 2 seconds
     {
         yield return new WaitForSeconds(2.0f);
         PopupText.text = "";

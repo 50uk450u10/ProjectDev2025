@@ -31,11 +31,16 @@ public class SprintHandler : MonoBehaviour
             {
                 isSprinting = true;
             }
+            if (currentStamina <= 0)
+            {
+                isSprinting = false;
+                playerController.playerSpeed = playerController.defaultSpeed;
+            }
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             isSprinting = false;
-            playerController.playerSpeed = 4;
+            playerController.playerSpeed = playerController.defaultSpeed;
         }
 
         if (isSprinting == true)

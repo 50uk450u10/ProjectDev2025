@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 input;
     private Rigidbody rb;
     public bool isHiding;
+    public float defaultSpeed;
     public float playerSpeed;
     PlayerInput playerMovement;
     IA_Player movement;
