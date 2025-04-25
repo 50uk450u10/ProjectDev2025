@@ -33,6 +33,9 @@ public class Chest : MonoBehaviour
                     itemInside.obtainable = true;
                     itemInside.gameObject.GetComponent<SphereCollider>().enabled = true;
                     reqItem = true;
+                    gameObject.GetComponent<Interactable>().enabled = false;
+                    gameObject.GetComponent<Outline>().enabled = false;
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
                     return;
                 }
                 else if (open)

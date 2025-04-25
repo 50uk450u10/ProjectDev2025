@@ -66,10 +66,10 @@ public class Interactable : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (outline != null)
+        /*if (outline != null)
         {
             outline.enabled = false;
-        }
+        }*/
 
         if (player != null)
         {
