@@ -31,11 +31,6 @@ public class SprintHandler : MonoBehaviour
             {
                 isSprinting = true;
             }
-            if (currentStamina <= 0)
-            {
-                isSprinting = false;
-                playerController.playerSpeed = playerController.defaultSpeed;
-            }
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
@@ -51,7 +46,7 @@ public class SprintHandler : MonoBehaviour
             {
                 currentStamina = 0;
                 isSprinting = false;
-                playerController.playerSpeed = 0;
+                playerController.playerSpeed = playerController.defaultSpeed;
             }
             sprintBar.fillAmount = currentStamina / maxStamina;
             if (recharge != null)
