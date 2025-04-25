@@ -5,6 +5,11 @@ public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] string sceneToLoad;        //attach scene's name to vairable and game should run said scene
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(sceneToLoad);
