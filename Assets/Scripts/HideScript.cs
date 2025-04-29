@@ -1,11 +1,11 @@
-/*using Unity.VisualScripting;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HideScript : MonoBehaviour
 {
     PlayerController player = null;
     Interactable obj;
-    EnemyAI enemy;
+    EnemyInsideAI enemy;
     public GameObject playerhand;
     //Flashlight flashlight;
     Vector3 spotPos;
@@ -31,12 +31,12 @@ public class HideScript : MonoBehaviour
         {
             if (player != null && player.isHiding == false)
             {
-                enemy = FindAnyObjectByType<EnemyAI>();
+                enemy = FindAnyObjectByType<EnemyInsideAI>();
                 if(enemy != null)
                 {
                     enemyDetect = enemy.detectionRange;
                     enemy.detectionRange = hideValue;
-                    enemy.currentState = EnemyAI.AIState.Patrol;
+                    enemy.SetState(EnemyInsideAI.State.PATROLLING);
                 }
 
                 //flashlight = FindAnyObjectByType<Flashlight>();
@@ -64,4 +64,3 @@ public class HideScript : MonoBehaviour
         }
     }
 }
-*/
