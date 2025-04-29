@@ -7,11 +7,12 @@ TagManager:
   - Enemy
   - Dirt
   - Selectable
+  - Door
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Door
   - Water
   - UI
   - 
