@@ -1,5 +1,7 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class Interactable : MonoBehaviour
     public UnityEvent onPerformInteraction; //Events to perform on Trigger Enter
     public UnityEvent onEndInteraction; //Events to perform on Trigger Exit
     public bool isHidingSpot;
+    public bool isMeteor;
     
     void Start()
     {
@@ -26,6 +29,11 @@ public class Interactable : MonoBehaviour
     public void EndInteraction()
     {
         onEndInteraction?.Invoke();
+    }
+
+    public void EndGame()
+    {
+        if (player.meteorCount >= 3 && isMeteor) {Debug.Log("You Win"); SceneManager.LoadScene(sceneName: "MainMenu"); };
     }
 
     private void OnTriggerEnter(Collider other)

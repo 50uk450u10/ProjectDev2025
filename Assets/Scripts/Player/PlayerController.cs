@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public UnityAction on_InteractPressed;
     public UnityAction on_InteractReleased;
     [SerializeField] Inventory myInventory;
+    public int meteorCount;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
         movement = new IA_Player();
         movement.PlayerMovement.Enable();
         isHiding = false;
+        meteorCount = 0;
     }
 
     private void OnDisable()
