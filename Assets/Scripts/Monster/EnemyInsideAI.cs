@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -41,6 +42,8 @@ public class EnemyInsideAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(currentState);
+
         anim.SetFloat("speed", agent.velocity.magnitude);
 
         switch (currentState)
@@ -143,15 +146,25 @@ public class EnemyInsideAI : MonoBehaviour
 
     public bool IsPlayerVisible()
     {
-        Vector3 direction = player.position - transform.position;
+        Vector3 directionToPlayer = (player.position - transform.position).normalized;
+        Vector3 forwardDirection = transform.forward;
 
-        if (direction.magnitude <= viewDistance)
+        float dot = Vector3.Dot(forwardDirection, directionToPlayer);
+
+        if (dot > 0.5f)
         {
-            if (Physics.Raycast(transform.position + Vector3.up, direction.normalized, out RaycastHit hit, viewDistance))
+            Debug.DrawRay(transform.position, directionToPlayer * viewDistance, Color.green);
+            if (Physics.Raycast(transform.position, directionToPlayer, out RaycastHit hit, viewDistance))
             {
-                return hit.transform == player;
+                if (hit.transform.gameObject == player.gameObject)
+                {
+                    Debug.Log(gameObject.name + " sees the player!");
+                    return true;
+                }
             }
+
         }
+
         return false;
     }
 
