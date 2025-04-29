@@ -86,6 +86,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hidingLocations: []
+  source: {fileID: 0}
+  spawnClip: {fileID: 0}
+  phase4Clip: {fileID: 0}
   caveLocation: {fileID: 0}
   appearLocation: {fileID: 0}
   appearDuration: 30
@@ -93,6 +97,7 @@ MonoBehaviour:
   disappearDistance: 100
   stalkDistance: 50
   player: {fileID: 0}
+  pFlashlight: {fileID: 0}
 --- !u!195 &1543287806351630544
 NavMeshAgent:
   m_ObjectHideFlags: 0

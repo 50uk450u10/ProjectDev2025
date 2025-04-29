@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class Chest : MonoBehaviour
 {
     [SerializeField] Item itemInside;
     [SerializeField] string requiredItem;
+    [SerializeField] TMP_Text PopupText;
 
     private Inventory playerInventory;
     private bool open = false;
@@ -12,10 +15,13 @@ public class Chest : MonoBehaviour
     private void Start()
     {
         playerInventory = FindFirstObjectByType<Inventory>();
+        anim = GetComponent<Animator>();
     }
 
     public void OpenChest()
     {
+        bool reqItem = false;
+
         foreach (Item k in playerInventory.items) //Loop through our inventory looking for the item to open the chest
         {
             if (k.itemName == requiredItem)
@@ -23,8 +29,14 @@ public class Chest : MonoBehaviour
                 if (!open) //Once we know we can open the chest, check to see if chest is already open, if not, set our values
                 {
                     open = true;
-                    gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    anim.SetBool("Open", true);
                     itemInside.obtainable = true;
+                    itemInside.gameObject.GetComponent<SphereCollider>().enabled = true;
+                    reqItem = true;
+                    gameObject.GetComponent<Interactable>().enabled = false;
+                    gameObject.GetComponent<Outline>().enabled = false;
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    return;
                 }
                 else if (open)
                 {
@@ -32,11 +44,22 @@ public class Chest : MonoBehaviour
                     return;
                 }
             }
+
+        }
+
+        if (!reqItem)
+        {
+            //Output to UI that you can not interact yet
+            PopupText.text = "The lock looks flimsy...";
+            StartCoroutine(TextUpdate());
         }
     }
 
-    void SetInsideObjectStatus()
+    private IEnumerator TextUpdate() //Allows clearing the popup prompt after 2 seconds
     {
-        itemInside.obtainable = true;
+        yield return new WaitForSeconds(2.0f);
+        PopupText.text = "";
+
     }
+
 }
