@@ -26,6 +26,6 @@ public class PlayerDeath : MonoBehaviour
         //SceneManager.LoadScene(currentScene); //Reload the current scene (from the beginning)
 
         //This will load the main menu
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("GameOver");
     }
 }

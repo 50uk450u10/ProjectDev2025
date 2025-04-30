@@ -14,47 +14,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 88.37815
+      value: -65.475
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.669
+      value: 2.122
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -50.70753
+      value: 11.821
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.50000006
+      value: 0.66834265
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000014053104
+      value: -0.63563204
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8660254
+      value: 0.27997798
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000024340691
+      value: 0.2662751
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -87.126
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 45.459
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4646a5628a9478442b8a5c4ac31440bc, type: 2}
     - target: {fileID: 919132149155446097, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       propertyPath: m_Name
       value: Key1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -72,6 +80,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5006021981997775163}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6332855262382630910}
   m_SourcePrefab: {fileID: 100100000, guid: 793eb84a20f7d8b4d92e904fa44eee49, type: 3}
 --- !u!1 &2197716358664931295 stripped
 GameObject:
@@ -133,9 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a86e3de6833025489b283088ab1bdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Key1
-  sprite: {fileID: 21300000, guid: 319cd734d0f4cc24395102a8bfb69e7d, type: 3}
-  obtainable: 0
+  itemName: Key2
+  sprite: {fileID: 21300000, guid: 3be1222d31770c146925de9874b0935d, type: 3}
+  obtainable: 1
 --- !u!135 &5006021981997775163
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -157,3 +168,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2
   m_Center: {x: 0.07786917, y: 0.0011868235, z: 0.002621411}
+--- !u!114 &6332855262382630910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197716358664931295}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

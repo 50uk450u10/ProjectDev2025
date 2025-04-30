@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public Transform[] patrolPoints;
     private int patrolIndex = 0;
+    private Animator anim;
 
     [Header("Settings")]
     public float viewDistance = 15f;
@@ -30,6 +31,7 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         PatrolState = new EnemyPatrolState(this);
         ChaseState = new EnemyChaseState(this);
+        anim = GetComponentInChildren<Animator>();
 
         SwitchState(PatrolState);
     }
@@ -37,6 +39,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         currentState.UpdateState();
+        anim.SetFloat("speed", agent.velocity.magnitude);
     }
 
     public void SwitchState(IEnemyState newState)
