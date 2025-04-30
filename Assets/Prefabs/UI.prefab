@@ -788,8 +788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978442b9305c0804e8a3d93865cbaa92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quitButtonPressed: 0
-  settingsButtonPressed: 0
   pauseMenuUI: {fileID: 7621660340974680864}
   confirmQuitPanel: {fileID: 6405612045741408563}
   buttonPanel: {fileID: 219752450847778639}
@@ -3150,7 +3148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -135.58698}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 646.3301, y: 176.826}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2000846405768039469
