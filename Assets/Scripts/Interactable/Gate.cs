@@ -1,38 +1,39 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
 
 public class Gate : MonoBehaviour
 {
-    Inventory i;
-    Vector3 finalPos;
-    bool openGate = false;
-    [SerializeField] string requiredItem;
+    [SerializeField] TMP_Text PopupText;
+    [SerializeField] TMP_Text interactionText;
+    private Canvas interactCanvas;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private void Start()
     {
-        i = FindFirstObjectByType<Inventory>(); //Find the inventory (there should only be one) in scene
-        finalPos = new Vector3(gameObject.transform.position.x, 10f, gameObject.transform.position.z); //Set a final position for the gate to transition to on open
+        var canvasParent = GameObject.Find("InteractionCanvas");
+        interactCanvas = canvasParent.GetComponent<Canvas>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        if (openGate && gameObject.transform.position != finalPos) //If gate bool is true, and the gate isn't in its final position
+        if (interactCanvas != null)
         {
-            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, finalPos, 0.01f); //Move the gate up
+            interactCanvas.enabled = true;
+        }
+        interactionText.text = "";
+        PopupText.text = "No going back that way...";
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        PopupText.text = "";
+        interactionText.text = "Press E";
+        if (interactCanvas != null)
+        {
+            interactCanvas.enabled = false;
         }
     }
 
-    public void OpenGate()
-    {
-        foreach(Item k in i.items) //Loop through our inventory looking for the item to open the gate
-        {
-            if (k.itemName == requiredItem)
-            {
-                openGate = true; //Open the gate if required item is found
-            }
-        }
-
-    }
 }
