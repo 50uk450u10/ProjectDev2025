@@ -13473,7 +13473,6 @@ GameObject:
   - component: {fileID: 449890960}
   - component: {fileID: 449890964}
   - component: {fileID: 449890963}
-  - component: {fileID: 449890962}
   - component: {fileID: 449890961}
   m_Layer: 0
   m_Name: meteor_invisWall
@@ -13491,8 +13490,8 @@ Transform:
   m_GameObject: {fileID: 449890959}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.473915, y: 0.11177063, z: 1.0425949}
-  m_LocalScale: {x: 13.047, y: 2.2182639, z: 13.047}
+  m_LocalPosition: {x: -15.473915, y: -1.8704, z: 1.0425949}
+  m_LocalScale: {x: 13.047, y: 0.23602328, z: 13.047}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1101082600}
@@ -13519,29 +13518,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!136 &449890962
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449890959}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &449890963
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64013,7 +63989,7 @@ PrefabInstance:
       objectReference: {fileID: 191188518}
     - target: {fileID: 7188716983006044224, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
       propertyPath: viewDistance
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7188716983006044224, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
       propertyPath: 'patrolLocations.Array.data[0]'
