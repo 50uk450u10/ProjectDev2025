@@ -64386,10 +64386,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3382116554214961925, guid: 59736cb3fefa6e6419e777c71c8d1bb6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.35
-      objectReference: {fileID: 0}
     - target: {fileID: 8037473391305910620, guid: 59736cb3fefa6e6419e777c71c8d1bb6, type: 3}
       propertyPath: m_Name
       value: Recessed Light

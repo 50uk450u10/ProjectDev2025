@@ -80,8 +80,6 @@ public class EnemyInsideAI : MonoBehaviour
                 if (ArrivedAtPatrolPoint())
                 {
                     currentPatrolLocation = pickNewPatrolPoint();
-                    Debug.Log(currentPatrolLocation);
-                    Debug.Log(currentPatrolLocation.position);
                     if (monsterLevel != playerLevel)
                     {
                         agent.enabled = false;

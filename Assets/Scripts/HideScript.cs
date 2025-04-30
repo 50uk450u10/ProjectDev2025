@@ -12,6 +12,7 @@ public class HideScript : MonoBehaviour
     float playerSpeed;
     float enemyDetect;
     float hideValue = 5f;
+    Outline outline;
     MouseMovement mouseMovement;
 
     [SerializeField] Transform rotationObject;
@@ -19,6 +20,7 @@ public class HideScript : MonoBehaviour
 
     void Start()
     {
+        outline = GetComponent<Outline>();
         mouseMovement = FindAnyObjectByType<MouseMovement>();
         obj = GetComponent<Interactable>();
     }
@@ -46,6 +48,7 @@ public class HideScript : MonoBehaviour
                 //if (flashlight != null) { Debug.Log("flash"); flashlight.FlashlightOn = false; }
                 if(playerhand != null) { playerhand.SetActive(false); }
 
+                outline.enabled = false;
                 mouseMovement.ToggleLocked();
                 playerPos = player.transform.position;
                 player.transform.position = rotationObject.position;
@@ -62,6 +65,7 @@ public class HideScript : MonoBehaviour
                 if (playerhand != null) { playerhand.SetActive (true); }
                 //if (flashlight != null) { flashlight.FlashlightOn = true; }
 
+                outline.enabled = true;
                 mouseMovement.ToggleLocked();
                 player.transform.position = playerPos;
                 player.playerSpeed = playerSpeed;
