@@ -74,13 +74,14 @@ public class Interactable : MonoBehaviour
 
     private void OnDestroy()
     {
-        /*if (outline != null)
+        if (interactCanvas != null)
         {
-            outline.enabled = false;
-        }*/
+            interactCanvas.enabled = false; //Turn off our text prompt
+        }
 
         if (player != null)
         {
+            
             player.on_InteractPressed -= PerformInteraction;
             player.on_InteractReleased -= EndInteraction;
         }

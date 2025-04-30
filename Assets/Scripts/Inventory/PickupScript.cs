@@ -28,7 +28,7 @@ public class PickupScript : MonoBehaviour
             {
                 monster.IncrementState(); //If we are outside and pickup an item, increment the monster's state
             }
-            interactCanvas.enabled = false; //turns off "press E" popup
+            //interactCanvas.enabled = false; //turns off "press E" popup
         }
         else if (item.obtainable == false)
         {
