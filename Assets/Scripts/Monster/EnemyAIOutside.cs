@@ -85,6 +85,11 @@ public class EnemyAIOutside : MonoBehaviour
                         //Run to a hiding spot
                         agent.SetDestination(currentHidingSpot.position);
                         agent.speed = 8.0f;
+                        if (CheckHidingSpot())
+                        {
+                            currentHidingSpot = pickNewHidingSpot();
+                            gameObject.transform.position = currentHidingSpot.position;
+                        }
                     }
                     else if (dot < 0.9f) //If monster is not in line of sight of player
                     {
@@ -150,6 +155,15 @@ public class EnemyAIOutside : MonoBehaviour
         }
         Debug.Log(currentState);
     }
+
+    private bool CheckHidingSpot()
+    {
+        if (transform.position.x == currentHidingSpot.position.x && transform.position.z == currentHidingSpot.position.z)
+        {
+            return true;
+        }
+        return false;
+    }    
 
     private Transform pickNewHidingSpot()
     {
