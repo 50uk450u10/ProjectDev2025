@@ -15,13 +15,17 @@ public class EnemyInsideAI : MonoBehaviour
     private NavMeshAgent agent;
     private Animator anim;
     private Transform currentPatrolLocation;
+    private float playerLevel = 1f;
+    private float monsterLevel = 1f;
 
     public UnityEvent onContactPlayer; //A unity event to call when the monster is in contact with the player
     public float detectionRange;
     public float viewDistance;
 
     [SerializeField] float deAggroTime = 5f;
-    [SerializeField] Transform[] patrolLocations;
+    [SerializeField] Transform[] midPatrolLocations;
+    [SerializeField] Transform[] topPatrolLocations;
+    [SerializeField] Transform[] bottomPatrolLocations;
     [SerializeField] AudioSource source;
     [SerializeField] AudioClip roarClip;
     [SerializeField] AudioClip attackClip;
@@ -42,9 +46,9 @@ public class EnemyInsideAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(currentState);
 
-        anim.SetFloat("speed", agent.velocity.magnitude);
+        anim.SetFloat("speed", agent.velocity.magnitude); //Animation is tied to speed of nav agent
+        
 
         switch (currentState)
         {
@@ -76,6 +80,15 @@ public class EnemyInsideAI : MonoBehaviour
                 if (ArrivedAtPatrolPoint())
                 {
                     currentPatrolLocation = pickNewPatrolPoint();
+                    Debug.Log(currentPatrolLocation);
+                    Debug.Log(currentPatrolLocation.position);
+                    if (monsterLevel != playerLevel)
+                    {
+                        agent.enabled = false;
+                        monsterLevel = playerLevel;
+                        transform.position = currentPatrolLocation.position;
+                        agent.enabled = true;
+                    }
                     agent.SetDestination(currentPatrolLocation.position);
                 }
                 break;
@@ -118,32 +131,10 @@ public class EnemyInsideAI : MonoBehaviour
     {
         if (gameObject.transform.position.x == currentPatrolLocation.position.x && gameObject.transform.position.z == currentPatrolLocation.position.z)
         {
+            CheckPlayerLevel();//Compare monster's location to player to determine if they are on a different level
             return true;
         }
         else return false;
-    }
-
-    public void IncrementState() //function to trigger our monster's state updates (since game actions will be the triggers)
-    {
-        /*currentState++; //We allow other actions in the game to call this function to change the monster's behavior
-        if (currentState != State.ATTACKING)
-        {
-            source.PlayOneShot(roarClip);
-        }
-        if (currentState == State.PATROLLING)
-        {
-            gameObject.transform.position = currentHidingSpot.position;
-            agent.enabled = true;
-            agent.speed = 3.0f;
-        }
-        else if (currentState == State.ATTACKING)
-        {
-            source.Stop();
-            source.PlayOneShot(attackClip);
-            source.PlayOneShot(phase4Clip);
-            agent.speed = 6.0f;
-        }
-        Debug.Log(currentState);*/
     }
 
     public bool IsPlayerVisible()
@@ -169,6 +160,20 @@ public class EnemyInsideAI : MonoBehaviour
         return false;
     }
 
+    public void CheckPlayerLevel()
+    {
+        if (player.position.y - transform.position.y > 4)
+        {
+            playerLevel += 1;
+            Debug.Log(playerLevel);
+        }
+        else if (player.position.y - transform.position.y < -4)
+        {
+            playerLevel -= 1;
+            Debug.Log(playerLevel);
+        }
+    }
+
     public State GetState()
     {
         return currentState;
@@ -181,9 +186,31 @@ public class EnemyInsideAI : MonoBehaviour
 
     private Transform pickNewPatrolPoint()
     {
-        var random = new System.Random();
-        var loc = random.Next(0, patrolLocations.Length);
-        return patrolLocations[loc];
+
+
+        switch (playerLevel)
+        {
+            case 0: //player is on the bottom level
+                var random = new System.Random();
+                var loc = random.Next(0, bottomPatrolLocations.Length);
+                return bottomPatrolLocations[loc];
+                
+            case 1: //player is on the middle level
+                var random1 = new System.Random();
+                var loc1 = random1.Next(0, midPatrolLocations.Length);
+                return midPatrolLocations[loc1];
+                
+            case 2: //player is on the top level
+                var random2 = new System.Random();
+                var loc2 = random2.Next(0, topPatrolLocations.Length);
+                return topPatrolLocations[loc2];
+                
+            default: //Something's wrong if you hit this lol
+                Debug.Log("Oops");
+                return null;
+        }
+
+
     }
     #endregion
 }
