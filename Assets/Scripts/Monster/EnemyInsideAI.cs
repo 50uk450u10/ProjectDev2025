@@ -49,7 +49,10 @@ public class EnemyInsideAI : MonoBehaviour
         switch (currentState)
         {
             case State.PASSIVE: //In this phase, the monster does nothing, chills for 3 seconds then transitions to patrolling
-                //Do nothing
+
+                if (agent.speed != 2f)
+                    agent.speed = 2f;
+
                 if (chillTimer < chillTime)
                 {
                     chillTimer += Time.deltaTime;
@@ -66,6 +69,7 @@ public class EnemyInsideAI : MonoBehaviour
                 if (IsPlayerVisible())
                 {
                     source.PlayOneShot(roarClip);
+                    agent.speed = 4f;
                     currentState = State.PURSUING;
                 }
 
@@ -85,10 +89,8 @@ public class EnemyInsideAI : MonoBehaviour
                 {
                     deAggroTimer += Time.deltaTime;
                 }
-                if (IsPlayerVisible())
-                {
-                    agent.SetDestination(player.position);
-                }
+
+                agent.SetDestination(player.position);
                 break;
             case State.ATTACKING: //Once triggered, the monster will kill the player
                 onContactPlayer.Invoke();
@@ -158,7 +160,6 @@ public class EnemyInsideAI : MonoBehaviour
             {
                 if (hit.transform.gameObject == player.gameObject)
                 {
-                    Debug.Log(gameObject.name + " sees the player!");
                     return true;
                 }
             }
