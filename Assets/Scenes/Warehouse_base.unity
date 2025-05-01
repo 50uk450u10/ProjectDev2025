@@ -24370,6 +24370,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8667600437327207568, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2141057135}
+    - target: {fileID: 8667600437327207568, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSensitivityFromSlider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -91084,6 +91092,17 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &2141057135 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4484180831030352836, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+  m_PrefabInstance: {fileID: 191188516}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62567357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd2ea15e3a72ae47b1a8f38d56ddfd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &2143918624
 MeshCollider:
   m_ObjectHideFlags: 0
