@@ -78648,7 +78648,7 @@ MonoBehaviour:
   requiredItem3: Meteorite Fragment 3
   PopupText: {fileID: 1128463272}
   WinClip: {fileID: 8300000, guid: b61d5714ab99f694ca7ce5cad7a78065, type: 3}
-  winLevel: 
+  winLevel: VictoryScene
 --- !u!65 &1848806735
 BoxCollider:
   m_ObjectHideFlags: 0
