@@ -96,15 +96,15 @@ public class EnemyInsideAI : MonoBehaviour
                     deAggroTimer = 0f;
                     currentState = State.PASSIVE;
                 }
-                if (!IsPlayerVisible())
+                else if (!IsPlayerVisible())
                 {
                     deAggroTimer += Time.deltaTime;
                 }
-                if (IsPlayerVisible())
+                else if (IsPlayerVisible())
                 {
                     deAggroTimer = 0f;
                 }
-
+                Debug.Log(deAggroTimer);
                 agent.SetDestination(player.position);
                 break;
             case State.ATTACKING: //Once triggered, the monster will kill the player
