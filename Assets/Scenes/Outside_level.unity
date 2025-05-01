@@ -17101,19 +17101,19 @@ PrefabInstance:
       objectReference: {fileID: 527149032}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -48.75
+      value: -47.92
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.13
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 119.29
+      value: 111.12
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.1475563
+      value: -0.99862176
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -17121,7 +17121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.98905367
+      value: -0.052484166
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -17133,7 +17133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -196.971
+      value: -353.983
       objectReference: {fileID: 0}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -22178,6 +22178,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isHidingSpot: 0
+  isMeteor: 0
 --- !u!65 &1200855296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28344,6 +28345,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isHidingSpot: 0
+  isMeteor: 0
 --- !u!114 &1594229032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63414,6 +63416,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isHidingSpot: 0
+  isMeteor: 0
 --- !u!114 &4855257987442906094
 MonoBehaviour:
   m_ObjectHideFlags: 0
