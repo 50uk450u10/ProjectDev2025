@@ -100,6 +100,10 @@ public class EnemyInsideAI : MonoBehaviour
                 {
                     deAggroTimer += Time.deltaTime;
                 }
+                if (IsPlayerVisible())
+                {
+                    deAggroTimer = 0f;
+                }
 
                 agent.SetDestination(player.position);
                 break;
@@ -163,12 +167,12 @@ public class EnemyInsideAI : MonoBehaviour
         if (player.position.y - transform.position.y > 4)
         {
             playerLevel += 1;
-            Debug.Log(playerLevel);
+            
         }
         else if (player.position.y - transform.position.y < -4)
         {
             playerLevel -= 1;
-            Debug.Log(playerLevel);
+            
         }
     }
 
