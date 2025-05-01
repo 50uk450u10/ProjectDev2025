@@ -32119,6 +32119,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6210998615456722003, guid: 6a1ad37fa15fc06408697b7da8774e89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1848806734}
+    - targetCorrespondingSourceObject: {fileID: 6210998615456722003, guid: 6a1ad37fa15fc06408697b7da8774e89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1848806737}
+    - targetCorrespondingSourceObject: {fileID: 6210998615456722003, guid: 6a1ad37fa15fc06408697b7da8774e89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1848806736}
+    - targetCorrespondingSourceObject: {fileID: 6210998615456722003, guid: 6a1ad37fa15fc06408697b7da8774e89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1848806738}
     - targetCorrespondingSourceObject: {fileID: -1823136107326079513, guid: 6a1ad37fa15fc06408697b7da8774e89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1958677191}
@@ -38919,6 +38928,10 @@ PrefabInstance:
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 47.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706488104654664805, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: itemName
+      value: Meteorite Fragment 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -54044,6 +54057,10 @@ PrefabInstance:
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 47.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706488104654664805, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: itemName
+      value: Meteorite Fragment 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78630,7 +78647,8 @@ MonoBehaviour:
   requiredItem2: Meteorite Fragment 2
   requiredItem3: Meteorite Fragment 3
   PopupText: {fileID: 1128463272}
-  WinClip: {fileID: 0}
+  WinClip: {fileID: 8300000, guid: b61d5714ab99f694ca7ce5cad7a78065, type: 3}
+  winLevel: 
 --- !u!65 &1848806735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78650,8 +78668,155 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.819576, y: 12.679065, z: 4.9049025}
-  m_Center: {x: -0.0004965277, y: -0.2869067, z: 1.9524492}
+  m_Size: {x: 5.819576, y: 15.553497, z: 4.9049025}
+  m_Center: {x: -0.0004965277, y: -1.2632419, z: 1.9524492}
+--- !u!114 &1848806736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848806729}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1848806737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848806729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e08be197d39b8b4d8b6c218ef4cce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPerformInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848806734}
+        m_TargetAssemblyTypeName: Meteor, Assembly-CSharp
+        m_MethodName: TurnInFragments
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEndInteraction:
+    m_PersistentCalls:
+      m_Calls: []
+  isHidingSpot: 0
+  isMeteor: 0
+--- !u!82 &1848806738
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848806729}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1849591062
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -90264,6 +90429,10 @@ PrefabInstance:
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 47.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706488104654664805, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: itemName
+      value: Meteorite Fragment 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

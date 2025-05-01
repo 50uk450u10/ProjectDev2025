@@ -10,6 +10,7 @@ public class Meteor : MonoBehaviour
     [SerializeField] string requiredItem3;
     [SerializeField] TMP_Text PopupText;
     [SerializeField] AudioClip WinClip;
+    [SerializeField] string winLevel;
 
     private Inventory playerInventory;
 
@@ -65,7 +66,7 @@ public class Meteor : MonoBehaviour
 
     private IEnumerator PauseForSound()
     {
-        yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("VictoryScene"); //Load into the warehouse
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene(winLevel); //Load into the victory scene
     }
 }

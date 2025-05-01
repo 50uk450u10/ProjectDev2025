@@ -13,6 +13,7 @@ public class Interactable : MonoBehaviour
     public bool isHidingSpot;
     public bool isMeteor;
     
+    
     void Start()
     {
         var canvasParent = GameObject.Find("InteractionCanvas");
@@ -39,18 +40,23 @@ public class Interactable : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         player = other.GetComponent<PlayerController>(); //Grab player component from collider's gameobject
-        interactCanvas.enabled = true; //Turn on our text prompt
-
-        if (outline != null)
-        {
-            outline.enabled = true;
-        }
 
         if (player != null)
         {
-            player.on_InteractPressed += PerformInteraction;
-            player.on_InteractReleased += EndInteraction;
+            interactCanvas.enabled = true; //Turn on our text prompt
+
+            if (outline != null)
+            {
+                outline.enabled = true;
+            }
+
+            if (player != null)
+            {
+                player.on_InteractPressed += PerformInteraction;
+                player.on_InteractReleased += EndInteraction;
+            }
         }
+
 
     }
 
