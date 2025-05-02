@@ -30,6 +30,8 @@ public class EnemyInsideAI : MonoBehaviour
     [SerializeField] AudioClip roarClip;
     [SerializeField] AudioClip attackClip;
     [SerializeField] Transform player; //Hook in our player for calculations
+    [SerializeField] float patrolSpeed = 2f;
+    [SerializeField] float pursueSpeed = 5f;
 
     #endregion
 
@@ -54,8 +56,8 @@ public class EnemyInsideAI : MonoBehaviour
         {
             case State.PASSIVE: //In this phase, the monster does nothing, chills for 3 seconds then transitions to patrolling
 
-                if (agent.speed != 2f)
-                    agent.speed = 2f;
+                if (agent.speed != patrolSpeed)
+                    agent.speed = patrolSpeed;
 
                 if (chillTimer < chillTime)
                 {
@@ -73,21 +75,21 @@ public class EnemyInsideAI : MonoBehaviour
                 if (IsPlayerVisible())
                 {
                     source.PlayOneShot(roarClip);
-                    agent.speed = 4f;
+                    agent.speed = pursueSpeed;
                     currentState = State.PURSUING;
                 }
 
                 if (ArrivedAtPatrolPoint())
                 {
-                    currentPatrolLocation = PickRandomPatrolPoint();
                     if (monsterLevel != playerLevel)
                     {
                         agent.enabled = false;
                         monsterLevel = playerLevel;
                         transform.position = PickFarthestLocation().position;
                         agent.enabled = true;
-                        currentPatrolLocation = PickRandomPatrolPoint();
+                        
                     }
+                    currentPatrolLocation = PickRandomPatrolPoint();
                     agent.SetDestination(currentPatrolLocation.position);
                 }
                 break;
@@ -105,7 +107,6 @@ public class EnemyInsideAI : MonoBehaviour
                 {
                     deAggroTimer = 0f;
                 }
-                Debug.Log(deAggroTimer);
                 agent.SetDestination(player.position);
                 break;
             case State.ATTACKING: //Once triggered, the monster will kill the player
@@ -165,16 +166,27 @@ public class EnemyInsideAI : MonoBehaviour
 
     public void CheckPlayerLevel()
     {
-        if (player.position.y - transform.position.y > 4)
+        if (player.position.y - transform.position.y > 7)
+        {
+            playerLevel += 2;
+
+        }
+        else if (player.position.y - transform.position.y > 4)
         {
             playerLevel += 1;
             
+        }
+        else if (player.position.y - transform.position.y < -7)
+        {
+            playerLevel -= 2;
+
         }
         else if (player.position.y - transform.position.y < -4)
         {
             playerLevel -= 1;
             
         }
+
     }
 
     public State GetState()
@@ -238,7 +250,7 @@ public class EnemyInsideAI : MonoBehaviour
     private Transform FindFarthestSpawnPoint(Transform[] t)
     {
         Transform farthestPoint = null;
-        t[0] = farthestPoint;
+        farthestPoint = t[0];
 
         for (int i = 0; i < t.Length; i++)
         {
