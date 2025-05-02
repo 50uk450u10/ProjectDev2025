@@ -20883,6 +20883,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 499920500936990845, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: m_Radius
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 499920500936990845, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: m_Center.x
+      value: -1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 499920500936990845, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: m_Center.y
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 499920500936990845, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
+      propertyPath: m_Center.z
+      value: 0.98
+      objectReference: {fileID: 0}
     - target: {fileID: 4686022564703689854, guid: f561d34eb24a8a44396a67b3758540a6, type: 3}
       propertyPath: m_Name
       value: bolt_cutters
