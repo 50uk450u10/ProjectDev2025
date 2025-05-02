@@ -3,22 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
-    [SerializeField] string sceneToLoad;        //attach scene's name to vairable and game should run said scene
+    public int sceneToLoad;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
+        sceneToLoad = GameManager.instance.sceneIndex;
     }
 
-    public void StartGame()
+    public void RestartLevel()
     {
         SceneManager.LoadScene(sceneToLoad);
     }
 
-    public void ExitGame()
+    public void ExitToMainMenu()
     {
-        Application.Quit();
-        Debug.Log("Game quit");
+        SceneManager.LoadScene(0);
     }
 }
