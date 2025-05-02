@@ -91606,6 +91606,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 191188518}
     - target: {fileID: 7188716983006044224, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
+      propertyPath: patrolSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188716983006044224, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
+      propertyPath: pursueSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188716983006044224, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
       propertyPath: viewDistance
       value: 15
       objectReference: {fileID: 0}
