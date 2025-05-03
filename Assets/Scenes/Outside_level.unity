@@ -17214,6 +17214,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+--- !u!82 &963305068 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1993142416344425352, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+  m_PrefabInstance: {fileID: 963305067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963598559 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2557831975541037642, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}
@@ -18827,6 +18832,22 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 7086305032086201795, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
+      propertyPath: manDying
+      value: 
+      objectReference: {fileID: 8300000, guid: f486a60f653e7ca4e8d6161c3d5c45f9, type: 3}
+    - target: {fileID: 7086305032086201795, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
+      propertyPath: playerSource
+      value: 
+      objectReference: {fileID: 2070995553}
+    - target: {fileID: 7086305032086201795, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
+      propertyPath: monsterAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: a6f176cfa7dafed4188e84a3f1b5a31f, type: 3}
+    - target: {fileID: 7086305032086201795, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
+      propertyPath: monsterSource
+      value: 
+      objectReference: {fileID: 963305068}
     - target: {fileID: 7864303925253998038, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_Name
       value: OutsideMonster
