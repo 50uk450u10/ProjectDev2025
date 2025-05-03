@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.011764706, g: 0.043137256, b: 0.07450981, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.00135
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -25,8 +25,8 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubtractiveShadowColor: {r: 0.101960786, g: 0.14901961, b: 0.2627451, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 82de1c9c9500256428b989f991d0b4e3, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -20044,7 +20044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 445047274396963388, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -208.1
+      value: -71
       objectReference: {fileID: 0}
     - target: {fileID: 445047274396963388, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20052,31 +20052,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 445047274396963388, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 762.4
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 445047274396963388, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0958893
+      value: 0.032205794
       objectReference: {fileID: 0}
     - target: {fileID: 445047274396963388, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.0061595533
       objectReference: {fileID: 0}
     - target: {fileID: 445047274396963388, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.995392
+      value: -0.98166937
       objectReference: {fileID: 0}
     - target: {fileID: 445047274396963388, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.18775019
       objectReference: {fileID: 0}
     - target: {fileID: 445047274396963388, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -21.655
       objectReference: {fileID: 0}
     - target: {fileID: 445047274396963388, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -191.005
+      value: -176.242
       objectReference: {fileID: 0}
     - target: {fileID: 445047274396963388, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -20190,6 +20190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OutsideMonster
       objectReference: {fileID: 0}
+    - target: {fileID: 8534934826299957719, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 200f1cae110657c478c5800ab8697ee1, type: 2}
     - target: {fileID: 8954928830736495211, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -43627,7 +43631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ef827b7f6a58d42832947f45d36952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Outside_level
+  sceneToLoad: 0
 --- !u!114 &1621714401
 MonoBehaviour:
   m_ObjectHideFlags: 0

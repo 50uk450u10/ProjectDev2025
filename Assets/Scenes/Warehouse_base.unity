@@ -7883,6 +7883,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 3476899973008913485, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
   m_PrefabInstance: {fileID: 191188516}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &191188519 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1993142416344425352, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+  m_PrefabInstance: {fileID: 191188516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &194211230
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -91615,6 +91620,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3403214507278591639, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
+      propertyPath: manDying
+      value: 
+      objectReference: {fileID: 8300000, guid: f486a60f653e7ca4e8d6161c3d5c45f9, type: 3}
+    - target: {fileID: 3403214507278591639, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
+      propertyPath: playerSource
+      value: 
+      objectReference: {fileID: 191188518}
+    - target: {fileID: 3403214507278591639, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
+      propertyPath: monsterAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: a6f176cfa7dafed4188e84a3f1b5a31f, type: 3}
+    - target: {fileID: 3403214507278591639, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
+      propertyPath: monsterSource
+      value: 
+      objectReference: {fileID: 191188519}
     - target: {fileID: 6793555350311061458, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
       propertyPath: m_Name
       value: InsideMonster
