@@ -31,10 +31,10 @@ public class Interactable : MonoBehaviour
         onEndInteraction?.Invoke();
     }
 
-    public void EndGame()
+    /*public void EndGame()
     {
         if (player.meteorCount >= 3 && isMeteor) {Debug.Log("You Win"); SceneManager.LoadScene(sceneName: "MainMenu"); };
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
@@ -87,6 +87,21 @@ public class Interactable : MonoBehaviour
         if (player != null)
         {
             
+            player.on_InteractPressed -= PerformInteraction;
+            player.on_InteractReleased -= EndInteraction;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (interactCanvas != null)
+        {
+            interactCanvas.enabled = false; //Turn off our text prompt
+        }
+
+        if (player != null)
+        {
+
             player.on_InteractPressed -= PerformInteraction;
             player.on_InteractReleased -= EndInteraction;
         }
