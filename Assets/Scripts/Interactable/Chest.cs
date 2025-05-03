@@ -9,7 +9,6 @@ public class Chest : MonoBehaviour
     [SerializeField] TMP_Text PopupText;
 
     private Inventory playerInventory;
-    private bool open = false;
     private Animator anim;
 
     private void Start()
@@ -20,34 +19,31 @@ public class Chest : MonoBehaviour
 
     public void OpenChest()
     {
-        bool reqItem = false;
+        bool hasReqItem = false;
+        Item reqItem = null;
 
         foreach (Item k in playerInventory.items) //Loop through our inventory looking for the item to open the chest
         {
             if (k.itemName == requiredItem)
             {
-                if (!open) //Once we know we can open the chest, check to see if chest is already open, if not, set our values
-                {
-                    open = true;
-                    anim.SetBool("Open", true);
-                    itemInside.obtainable = true;
-                    itemInside.gameObject.GetComponent<SphereCollider>().enabled = true;
-                    reqItem = true;
-                    gameObject.GetComponent<Interactable>().enabled = false;
-                    gameObject.GetComponent<Outline>().enabled = false;
-                    gameObject.GetComponent<BoxCollider>().enabled = false;
-                    return;
-                }
-                else if (open)
-                {
-                    //do nothing
-                    return;
-                }
+                anim.SetBool("Open", true);
+                itemInside.obtainable = true;
+                itemInside.gameObject.GetComponent<SphereCollider>().enabled = true;
+                hasReqItem = true;
+                gameObject.GetComponent<Interactable>().enabled = false;
+                gameObject.GetComponent<Outline>().enabled = false;
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+                reqItem = k;
+                break;
             }
-
         }
 
-        if (!reqItem)
+        if (hasReqItem)
+        {
+            playerInventory.RemoveItem(reqItem);
+        }
+
+        if (!hasReqItem)
         {
             //Output to UI that you can not interact yet
             PopupText.text = "The lock looks flimsy...";

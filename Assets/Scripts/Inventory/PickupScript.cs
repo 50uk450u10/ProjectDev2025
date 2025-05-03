@@ -21,7 +21,7 @@ public class PickupScript : MonoBehaviour
         if (item.obtainable)
         {
             playerInventory.AddItem(item); //Adds the item object we created to our inventory
-            Destroy(gameObject); //Destroy what we picked up in the game world
+            //Destroy(gameObject); //Destroy what we picked up in the game world
             if (monster != null)
             {
                 monster.IncrementState(); //If we are outside and pickup an item, increment the monster's state
