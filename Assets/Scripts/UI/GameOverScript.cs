@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
-    public int sceneToLoad;
+    int sceneToLoad;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
