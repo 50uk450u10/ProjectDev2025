@@ -13,12 +13,14 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] Image flash;
     [SerializeField] Color red;
     [SerializeField] float fadeSpeed;
+    [SerializeField] GameObject cameraObj;
     bool gameOverTriggered;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         red = flash.color;
+        
     }
 
     // Update is called once per frame
@@ -26,9 +28,20 @@ public class PlayerDeath : MonoBehaviour
     {
         if (gameOverTriggered)
         {
-
             red.a += fadeSpeed * Time.deltaTime;
             flash.color = red;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (gameOverTriggered)
+        {
+            var camRB = cameraObj.GetComponent<Rigidbody>();
+            if (camRB != null)
+            {
+                camRB.AddTorque(15f, 0, -25f);
+            }
         }
     }
 
@@ -36,6 +49,9 @@ public class PlayerDeath : MonoBehaviour
     {
         playerSource.PlayOneShot(manDying);
         monsterSource.PlayOneShot(monsterAttack);
+        cameraObj.transform.parent = null;
+        var camRB = cameraObj.AddComponent<Rigidbody>();
+        camRB.AddForce(new Vector3(1f, 1f, 0f) * 5f, ForceMode.Impulse);
 
         //This will load the main menu
         StartCoroutine(PauseForSound());

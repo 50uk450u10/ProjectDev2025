@@ -7872,6 +7872,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6637040341132927618, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2141057131}
+    - targetCorrespondingSourceObject: {fileID: 1336953767378083061, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 191188521}
   m_SourcePrefab: {fileID: 100100000, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
 --- !u!1 &191188517 stripped
 GameObject:
@@ -7888,6 +7891,32 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 1993142416344425352, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
   m_PrefabInstance: {fileID: 191188516}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &191188520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1336953767378083061, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+  m_PrefabInstance: {fileID: 191188516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &191188521
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191188520}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &194211230
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59060,6 +59089,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2448059505154840490, guid: 4df4aacb6d6c7a74e9b19c663de15293, type: 3}
   m_PrefabInstance: {fileID: 1322727701}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1322848117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3311652053190012864, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+  m_PrefabInstance: {fileID: 191188516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1327047467
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -91853,6 +91887,10 @@ PrefabInstance:
       propertyPath: fadeSpeed
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3403214507278591639, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
+      propertyPath: cameraParent
+      value: 
+      objectReference: {fileID: 1322848117}
     - target: {fileID: 3403214507278591639, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
       propertyPath: playerSource
       value: 
