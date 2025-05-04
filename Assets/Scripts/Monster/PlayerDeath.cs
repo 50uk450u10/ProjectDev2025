@@ -10,8 +10,9 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] AudioClip monsterAttack;
     [SerializeField] AudioSource playerSource;
     [SerializeField] AudioSource monsterSource;
-    [SerializeField] Image bloodImage;
-
+    [SerializeField] Image flash;
+    [SerializeField] Color red;
+    [SerializeField] float fadeSpeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,6 +37,11 @@ public class PlayerDeath : MonoBehaviour
 
     private IEnumerator PauseForSound()
     {
+        //flash = Color.Lerp(flash, flash2, fadeSpeed * Time.deltaTime);
+        //flash += fadeSpeed * Time.deltaTime;
+        red = flash.color;
+        red.a += fadeSpeed * Time.deltaTime;
+        flash.color = red;
         yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene("GameOver"); //Load into the gameover screen
     }
