@@ -38,8 +38,6 @@ public class MouseMovement : MonoBehaviour
             transform.eulerAngles = new Vector3(0, rotY, 0);
             lookPos.eulerAngles = new Vector3(rotX, rotY, 0);
         }
-
-
     }
 
     public void SetSensitivityFromSlider(float sliderValue)

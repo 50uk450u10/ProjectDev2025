@@ -1,15 +1,22 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
 
 
 public class PlayerDeath : MonoBehaviour
 {
-    int currentScene;
+    [SerializeField] AudioClip manDying;
+    [SerializeField] AudioClip monsterAttack;
+    [SerializeField] AudioSource playerSource;
+    [SerializeField] AudioSource monsterSource;
+    [SerializeField] Image bloodImage;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentScene = SceneManager.GetActiveScene().buildIndex; //Get the index of our current level and save it
+        
     }
 
     // Update is called once per frame
@@ -20,12 +27,16 @@ public class PlayerDeath : MonoBehaviour
 
     public void GameOver()
     {
-        //Debug.Log("You've been killed by The Monster!");
-
-        //This will load the current scene so that you can restart
-        //SceneManager.LoadScene(currentScene); //Reload the current scene (from the beginning)
+        playerSource.PlayOneShot(manDying);
+        monsterSource.PlayOneShot(monsterAttack);
 
         //This will load the main menu
-        SceneManager.LoadScene("GameOver");
+        StartCoroutine(PauseForSound());
+    }
+
+    private IEnumerator PauseForSound()
+    {
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene("GameOver"); //Load into the gameover screen
     }
 }

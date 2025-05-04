@@ -1,4 +1,3 @@
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -12,6 +11,7 @@ public class Interactable : MonoBehaviour
     public UnityEvent onEndInteraction; //Events to perform on Trigger Exit
     public bool isHidingSpot;
     public bool isMeteor;
+    
     
     void Start()
     {
@@ -31,26 +31,31 @@ public class Interactable : MonoBehaviour
         onEndInteraction?.Invoke();
     }
 
-    public void EndGame()
+    /*public void EndGame()
     {
         if (player.meteorCount >= 3 && isMeteor) {Debug.Log("You Win"); SceneManager.LoadScene(sceneName: "MainMenu"); };
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
         player = other.GetComponent<PlayerController>(); //Grab player component from collider's gameobject
-        interactCanvas.enabled = true; //Turn on our text prompt
-
-        if (outline != null)
-        {
-            outline.enabled = true;
-        }
 
         if (player != null)
         {
-            player.on_InteractPressed += PerformInteraction;
-            player.on_InteractReleased += EndInteraction;
+            interactCanvas.enabled = true; //Turn on our text prompt
+
+            if (outline != null)
+            {
+                outline.enabled = true;
+            }
+
+            if (player != null)
+            {
+                player.on_InteractPressed += PerformInteraction;
+                player.on_InteractReleased += EndInteraction;
+            }
         }
+
 
     }
 
@@ -74,13 +79,29 @@ public class Interactable : MonoBehaviour
 
     private void OnDestroy()
     {
-        /*if (outline != null)
+        if (interactCanvas != null)
         {
-            outline.enabled = false;
-        }*/
+            interactCanvas.enabled = false; //Turn off our text prompt
+        }
 
         if (player != null)
         {
+            
+            player.on_InteractPressed -= PerformInteraction;
+            player.on_InteractReleased -= EndInteraction;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (interactCanvas != null)
+        {
+            interactCanvas.enabled = false; //Turn off our text prompt
+        }
+
+        if (player != null)
+        {
+
             player.on_InteractPressed -= PerformInteraction;
             player.on_InteractReleased -= EndInteraction;
         }

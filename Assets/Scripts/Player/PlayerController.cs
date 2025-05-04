@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.DefaultInputActions;
 
 public class PlayerController : MonoBehaviour
 {

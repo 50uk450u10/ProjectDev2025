@@ -30,6 +30,8 @@ public class EnemyInsideAI : MonoBehaviour
     [SerializeField] AudioClip roarClip;
     [SerializeField] AudioClip attackClip;
     [SerializeField] Transform player; //Hook in our player for calculations
+    [SerializeField] float patrolSpeed = 2f;
+    [SerializeField] float pursueSpeed = 5f;
 
     #endregion
 
@@ -54,8 +56,8 @@ public class EnemyInsideAI : MonoBehaviour
         {
             case State.PASSIVE: //In this phase, the monster does nothing, chills for 3 seconds then transitions to patrolling
 
-                if (agent.speed != 2f)
-                    agent.speed = 2f;
+                if (agent.speed != patrolSpeed)
+                    agent.speed = patrolSpeed;
 
                 if (chillTimer < chillTime)
                 {
@@ -64,7 +66,7 @@ public class EnemyInsideAI : MonoBehaviour
                 else if (chillTimer >= chillTime)
                 {
                     chillTimer = 0f;
-                    currentPatrolLocation = pickNewPatrolPoint();
+                    currentPatrolLocation = PickRandomPatrolPoint();
                     agent.SetDestination(currentPatrolLocation.position);
                     currentState = State.PATROLLING;
                 }
@@ -73,20 +75,21 @@ public class EnemyInsideAI : MonoBehaviour
                 if (IsPlayerVisible())
                 {
                     source.PlayOneShot(roarClip);
-                    agent.speed = 4f;
+                    agent.speed = pursueSpeed;
                     currentState = State.PURSUING;
                 }
 
                 if (ArrivedAtPatrolPoint())
                 {
-                    currentPatrolLocation = pickNewPatrolPoint();
                     if (monsterLevel != playerLevel)
                     {
                         agent.enabled = false;
                         monsterLevel = playerLevel;
-                        transform.position = currentPatrolLocation.position;
+                        transform.position = PickFarthestLocation().position;
                         agent.enabled = true;
+                        
                     }
+                    currentPatrolLocation = PickRandomPatrolPoint();
                     agent.SetDestination(currentPatrolLocation.position);
                 }
                 break;
@@ -96,11 +99,14 @@ public class EnemyInsideAI : MonoBehaviour
                     deAggroTimer = 0f;
                     currentState = State.PASSIVE;
                 }
-                if (!IsPlayerVisible())
+                else if (!IsPlayerVisible())
                 {
                     deAggroTimer += Time.deltaTime;
                 }
-
+                else if (IsPlayerVisible())
+                {
+                    deAggroTimer = 0f;
+                }
                 agent.SetDestination(player.position);
                 break;
             case State.ATTACKING: //Once triggered, the monster will kill the player
@@ -160,16 +166,27 @@ public class EnemyInsideAI : MonoBehaviour
 
     public void CheckPlayerLevel()
     {
-        if (player.position.y - transform.position.y > 4)
+        if (player.position.y - transform.position.y > 7)
+        {
+            playerLevel += 2;
+
+        }
+        else if (player.position.y - transform.position.y > 4)
         {
             playerLevel += 1;
-            Debug.Log(playerLevel);
+            
+        }
+        else if (player.position.y - transform.position.y < -7)
+        {
+            playerLevel -= 2;
+
         }
         else if (player.position.y - transform.position.y < -4)
         {
             playerLevel -= 1;
-            Debug.Log(playerLevel);
+            
         }
+
     }
 
     public State GetState()
@@ -182,7 +199,7 @@ public class EnemyInsideAI : MonoBehaviour
         currentState = state;
     }
 
-    private Transform pickNewPatrolPoint()
+    private Transform PickRandomPatrolPoint()
     {
 
 
@@ -192,12 +209,12 @@ public class EnemyInsideAI : MonoBehaviour
                 var random = new System.Random();
                 var loc = random.Next(0, bottomPatrolLocations.Length);
                 return bottomPatrolLocations[loc];
-                
+
             case 1: //player is on the middle level
                 var random1 = new System.Random();
                 var loc1 = random1.Next(0, midPatrolLocations.Length);
                 return midPatrolLocations[loc1];
-                
+
             case 2: //player is on the top level
                 var random2 = new System.Random();
                 var loc2 = random2.Next(0, topPatrolLocations.Length);
@@ -209,6 +226,41 @@ public class EnemyInsideAI : MonoBehaviour
         }
 
 
+    }
+
+    private Transform PickFarthestLocation()
+    {
+        switch (playerLevel)
+        {
+            case 0: //player is on the bottom level
+                return FindFarthestSpawnPoint(bottomPatrolLocations);
+
+            case 1: //player is on the middle level
+                return FindFarthestSpawnPoint(midPatrolLocations);
+
+            case 2: //player is on the top level
+                return FindFarthestSpawnPoint(topPatrolLocations);
+
+            default: //Something's wrong if you hit this lol
+                Debug.Log("Oops");
+                return null;
+        }
+    }
+
+    private Transform FindFarthestSpawnPoint(Transform[] t)
+    {
+        Transform farthestPoint = null;
+        farthestPoint = t[0];
+
+        for (int i = 0; i < t.Length; i++)
+        {
+            if (Vector3.Distance(t[i].position, player.position) > Vector3.Distance(farthestPoint.position, player.position))
+            {
+                farthestPoint = t[i];
+            }
+        }
+
+        return farthestPoint;
     }
     #endregion
 }

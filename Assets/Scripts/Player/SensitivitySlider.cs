@@ -12,12 +12,14 @@ public class SensitivitySlider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        sensSlider.value = GameManager.instance.mouseSens;
+        sensText.text = sensSlider.value.ToString("0.00");
     }
 
     // Update is called once per frame
     void Update()
     {
         sensText.text = sensSlider.value.ToString("0.00");
+        GameManager.instance.mouseSens = sensSlider.value;
     }
 }
