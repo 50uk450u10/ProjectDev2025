@@ -111,6 +111,7 @@ public class EnemyInsideAI : MonoBehaviour
                 break;
             case State.ATTACKING: //Once triggered, the monster will kill the player
                 onContactPlayer.Invoke();
+                currentState = State.PASSIVE;
                 break;
             default:
                 //Do nothing
@@ -128,6 +129,8 @@ public class EnemyInsideAI : MonoBehaviour
         if (other.gameObject == player.gameObject)
         {
             currentState = State.ATTACKING;
+            gameObject.GetComponent<SphereCollider>().enabled = false;
+            gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 

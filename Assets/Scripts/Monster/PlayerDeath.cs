@@ -13,17 +13,23 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] Image flash;
     [SerializeField] Color red;
     [SerializeField] float fadeSpeed;
+    bool gameOverTriggered;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        red = flash.color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameOverTriggered)
+        {
+
+            red.a += fadeSpeed * Time.deltaTime;
+            flash.color = red;
+        }
     }
 
     public void GameOver()
@@ -39,9 +45,7 @@ public class PlayerDeath : MonoBehaviour
     {
         //flash = Color.Lerp(flash, flash2, fadeSpeed * Time.deltaTime);
         //flash += fadeSpeed * Time.deltaTime;
-        red = flash.color;
-        red.a += fadeSpeed * Time.deltaTime;
-        flash.color = red;
+        gameOverTriggered = true;
         yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene("GameOver"); //Load into the gameover screen
     }
