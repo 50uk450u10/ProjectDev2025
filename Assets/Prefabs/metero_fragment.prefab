@@ -86,9 +86,9 @@ MonoBehaviour:
   onPerformInteraction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476870420605103836}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: PerformInteraction
+      - m_Target: {fileID: 5241112266068792544}
+        m_TargetAssemblyTypeName: MeteoriteFragment, Assembly-CSharp
+        m_MethodName: onInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
