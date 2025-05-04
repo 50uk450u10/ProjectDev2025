@@ -91884,6 +91884,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: f486a60f653e7ca4e8d6161c3d5c45f9, type: 3}
     - target: {fileID: 3403214507278591639, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
+      propertyPath: cameraObj
+      value: 
+      objectReference: {fileID: 1322848117}
+    - target: {fileID: 3403214507278591639, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
       propertyPath: fadeSpeed
       value: 0.5
       objectReference: {fileID: 0}
