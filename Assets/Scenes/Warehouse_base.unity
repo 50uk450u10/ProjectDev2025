@@ -21003,6 +21003,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5632856784540623100, guid: 68b582302365be841983da2c3b3c38f0, type: 3}
+--- !u!224 &511767204 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2494253428307173227, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
+  m_PrefabInstance: {fileID: 609977194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &511866150
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23966,19 +23971,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600723796}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 420958573}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 511767204}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!64 &601424662
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24585,6 +24590,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8306384897789829616, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8667600437327207568, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -24595,7 +24604,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2494253428307173227, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 600723800}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
 --- !u!114 &609977195 stripped
@@ -79050,14 +79062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb356cc6edcadd48b23e24799af1cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItem1: Meteorite Fragment Ground Floor
-  requiredItem2: Meteorite Fragment Top Floor
-  requiredItem3: Meteorite Fragment Basement
-  PopupText: {fileID: 1128463272}
-  WinClip: {fileID: 8300000, guid: b61d5714ab99f694ca7ce5cad7a78065, type: 3}
-  winLevel: VictoryScene
-  player: {fileID: 0}
-  playerInventory: {fileID: 0}
 --- !u!65 &1848806735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92030,7 +92034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6793555350311061458, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7188716983006044224, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
       propertyPath: player
@@ -92624,4 +92628,3 @@ SceneRoots:
   - {fileID: 2019869556}
   - {fileID: 2017188286}
   - {fileID: 1591633163}
-  - {fileID: 600723800}

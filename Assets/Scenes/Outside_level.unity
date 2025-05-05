@@ -11678,6 +11678,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3010463089524652531, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}
+--- !u!1 &649308677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3311652053190012864, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+  m_PrefabInstance: {fileID: 963305067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &649737048 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5533605607188859054, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}
@@ -12922,7 +12927,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2494253428307173227, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 2065577570}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
 --- !u!114 &702865654 stripped
@@ -12936,6 +12944,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &702865655 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2494253428307173227, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
+  m_PrefabInstance: {fileID: 702865653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &704030567 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6430437860746109904, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}
@@ -18877,6 +18890,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: f486a60f653e7ca4e8d6161c3d5c45f9, type: 3}
     - target: {fileID: 7086305032086201795, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
+      propertyPath: cameraObj
+      value: 
+      objectReference: {fileID: 649308677}
+    - target: {fileID: 7086305032086201795, guid: a1a7cef24f247894eb13b2d28c3d436f, type: 3}
       propertyPath: fadeSpeed
       value: 0.5
       objectReference: {fileID: 0}
@@ -22322,6 +22339,8 @@ MonoBehaviour:
       m_Calls: []
   isHidingSpot: 0
   isMeteor: 0
+  PopupText: {fileID: 0}
+  WinClip: {fileID: 0}
 --- !u!65 &1200855296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28565,6 +28584,8 @@ MonoBehaviour:
       m_Calls: []
   isHidingSpot: 0
   isMeteor: 0
+  PopupText: {fileID: 0}
+  WinClip: {fileID: 0}
 --- !u!114 &1594229032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61965,19 +61986,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065577566}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1572907049}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 702865655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2068768401 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7440563110229226059, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}
@@ -63871,6 +63892,8 @@ MonoBehaviour:
       m_Calls: []
   isHidingSpot: 0
   isMeteor: 0
+  PopupText: {fileID: 0}
+  WinClip: {fileID: 0}
 --- !u!114 &4855257987442906094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63965,4 +63988,3 @@ SceneRoots:
   - {fileID: 1055108711}
   - {fileID: 626111664}
   - {fileID: 2115697250}
-  - {fileID: 2065577570}
