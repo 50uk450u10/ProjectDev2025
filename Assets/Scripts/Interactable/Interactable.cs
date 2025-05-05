@@ -1,6 +1,8 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Interactable : MonoBehaviour
 {
@@ -11,8 +13,12 @@ public class Interactable : MonoBehaviour
     public UnityEvent onEndInteraction; //Events to perform on Trigger Exit
     public bool isHidingSpot;
     public bool isMeteor;
-    
-    
+    //Meteor meteor;
+    [SerializeField] public TMP_Text PopupText;
+    [SerializeField] public AudioClip WinClip;
+
+
+
     void Start()
     {
         var canvasParent = GameObject.Find("InteractionCanvas");
@@ -31,10 +37,19 @@ public class Interactable : MonoBehaviour
         onEndInteraction?.Invoke();
     }
 
-    /*public void EndGame()
+    public void EndGame()
     {
-        if (player.meteorCount >= 3 && isMeteor) {Debug.Log("You Win"); SceneManager.LoadScene(sceneName: "MainMenu"); };
-    }*/
+        if (player.meteorCount >= 3 && isMeteor)
+        {
+            gameObject.GetComponent<AudioSource>().PlayOneShot(WinClip);
+            StartCoroutine(PauseForSound());
+        }
+        else if (player.meteorCount < 3 && isMeteor)
+        {
+            PopupText.text = "You must gather all of the fragments for your reward...";
+            StartCoroutine(TextUpdate());
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -107,4 +122,15 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    private IEnumerator TextUpdate() //This allows clearing of the popup text after 2 seconds
+    {
+        yield return new WaitForSeconds(2.0f);
+        PopupText.text = "";
+    }
+
+    private IEnumerator PauseForSound()
+    {
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene(sceneName: "VictoryScene"); //Load into the victory scene
+    }
 }

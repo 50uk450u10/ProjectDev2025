@@ -7791,6 +7791,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4544232836375038880, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+      propertyPath: meteorCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544232836375038880, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: myInventory
       value: 
       objectReference: {fileID: 609977196}
@@ -39111,17 +39115,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meteorite Fragment Ground Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1448521786}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1448521786}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onInteraction
+      objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: onInteraction
+      objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MeteoriteFragment, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MeteoriteFragment, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.334938
+      value: 15.143
       objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.0388374
+      value: -2.746
       objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.669796
+      value: 12.466
       objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39154,6 +39190,10 @@ PrefabInstance:
     - target: {fileID: 2706488104654664805, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: itemName
       value: Meteorite Fragment 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019706423155049745, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -54240,9 +54280,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meteorite Fragment Basement
       objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1862473121}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onInteraction
+      objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MeteoriteFragment, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.6855545
+      value: -5.626
       objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalPosition.y
@@ -54250,7 +54306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.243408
+      value: 21.179
       objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54283,6 +54339,10 @@ PrefabInstance:
     - target: {fileID: 2706488104654664805, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: itemName
       value: Meteorite Fragment 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019706423155049745, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -63294,6 +63354,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 10c3594783ba61349a256e5bff8dcce2, type: 3}
   m_PrefabInstance: {fileID: 1448002967}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1448521786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5241112266068792544, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+  m_PrefabInstance: {fileID: 805324618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d4808a191d70f49b5064c33aa57bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &1450735789
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -78979,12 +79050,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb356cc6edcadd48b23e24799af1cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItem1: Meteorite Fragment 1
-  requiredItem2: Meteorite Fragment 2
-  requiredItem3: Meteorite Fragment 3
+  requiredItem1: Meteorite Fragment Ground Floor
+  requiredItem2: Meteorite Fragment Top Floor
+  requiredItem3: Meteorite Fragment Basement
   PopupText: {fileID: 1128463272}
   WinClip: {fileID: 8300000, guid: b61d5714ab99f694ca7ce5cad7a78065, type: 3}
   winLevel: VictoryScene
+  player: {fileID: 0}
+  playerInventory: {fileID: 0}
 --- !u!65 &1848806735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79039,9 +79112,9 @@ MonoBehaviour:
   onPerformInteraction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1848806734}
-        m_TargetAssemblyTypeName: Meteor, Assembly-CSharp
-        m_MethodName: TurnInFragments
+      - m_Target: {fileID: 1848806737}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -79055,7 +79128,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isHidingSpot: 0
-  isMeteor: 0
+  isMeteor: 1
+  PopupText: {fileID: 1128463272}
+  WinClip: {fileID: 8300000, guid: b61d5714ab99f694ca7ce5cad7a78065, type: 3}
 --- !u!82 &1848806738
 AudioSource:
   m_ObjectHideFlags: 0
@@ -79066,12 +79141,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b61d5714ab99f694ca7ce5cad7a78065, type: 3}
+  m_Resource: {fileID: 8300000, guid: b61d5714ab99f694ca7ce5cad7a78065, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -79416,6 +79491,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4700339949008730407, guid: e85c4ecb01c4a1e4899fd0e1223ecbd8, type: 3}
+--- !u!114 &1862473121 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5241112266068792544, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+  m_PrefabInstance: {fileID: 1189924619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d4808a191d70f49b5064c33aa57bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &1864006568
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -90726,9 +90812,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meteorite Fragment Top Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2130635365}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onInteraction
+      objectReference: {fileID: 0}
+    - target: {fileID: 476870420605103836, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: onPerformInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MeteoriteFragment, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.814148
+      value: 7.116
       objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalPosition.y
@@ -90736,7 +90838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.826553
+      value: 12.107
       objectReference: {fileID: 0}
     - target: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
       propertyPath: m_LocalRotation.w
@@ -90770,6 +90872,10 @@ PrefabInstance:
       propertyPath: itemName
       value: Meteorite Fragment 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3019706423155049745, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90780,6 +90886,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 603062211662910586, guid: 204936c4dd489d34ca63368c34354389, type: 3}
   m_PrefabInstance: {fileID: 2130635359}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2130635365 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5241112266068792544, guid: 204936c4dd489d34ca63368c34354389, type: 3}
+  m_PrefabInstance: {fileID: 2130635359}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d4808a191d70f49b5064c33aa57bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &2130994293
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -91910,6 +92027,10 @@ PrefabInstance:
     - target: {fileID: 6793555350311061458, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
       propertyPath: m_Name
       value: InsideMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793555350311061458, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7188716983006044224, guid: a870802ee448a364c887e817bd7ae9ae, type: 3}
       propertyPath: player

@@ -14,7 +14,7 @@ public class MeteoriteFragment : MonoBehaviour
         if (player != null)
         {
             player.meteorCount += 1;
-            Debug.Log(player.meteorCount);
+            //Debug.Log(player.meteorCount);
             GameObject.Destroy(gameObject);
         }
     }

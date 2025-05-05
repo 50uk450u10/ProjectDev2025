@@ -1,4 +1,4 @@
-using TMPro;
+/*using TMPro;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
@@ -8,9 +8,10 @@ public class Meteor : MonoBehaviour
     [SerializeField] string requiredItem1;
     [SerializeField] string requiredItem2;
     [SerializeField] string requiredItem3;
-    [SerializeField] TMP_Text PopupText;
-    [SerializeField] AudioClip WinClip;
-    [SerializeField] string winLevel;
+    [SerializeField] public TMP_Text PopupText;
+    [SerializeField] public AudioClip WinClip;
+    [SerializeField] public string winLevel;
+    PlayerController player;
 
     private Inventory playerInventory;
 
@@ -43,15 +44,15 @@ public class Meteor : MonoBehaviour
                 hasItem3 = true;
             }
         }
-
-        if (!hasItem1 || !hasItem2) //If you don't have either required item, prompt player
+        
+        if (player.meteorCount < 3 /*!hasItem1 || !hasItem2) //If you don't have either required item, prompt player
         {
             //Output to UI that you can not interact yet
             PopupText.text = "You must gather all of the fragments for your reward...";
             StartCoroutine(TextUpdate());
         }
 
-        if (hasItem1 && hasItem2 && hasItem3)
+        if (player.meteorCount >= 3 /*hasItem1 && hasItem2 && hasItem3)
         {
             gameObject.GetComponent<AudioSource>().PlayOneShot(WinClip);
             StartCoroutine(PauseForSound());
@@ -70,3 +71,4 @@ public class Meteor : MonoBehaviour
         SceneManager.LoadScene(winLevel); //Load into the victory scene
     }
 }
+*/
