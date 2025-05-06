@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -229,6 +227,13 @@ public class EnemyInsideAI : MonoBehaviour
         }
 
 
+    }
+
+    public void AngerMonster()
+    {
+        patrolSpeed *= 1.5f;
+        pursueSpeed *= 1.25f;
+        source.PlayOneShot(attackClip);
     }
 
     private Transform PickFarthestLocation()

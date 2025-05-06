@@ -44,7 +44,7 @@ public class Meteor : MonoBehaviour
             }
         }
 
-        if (!hasItem1 || !hasItem2) //If you don't have either required item, prompt player
+        if (!hasItem1 || !hasItem2 || !hasItem3) //If you don't have any required item, prompt player
         {
             //Output to UI that you can not interact yet
             PopupText.text = "You must gather all of the fragments for your reward...";
