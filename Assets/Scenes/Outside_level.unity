@@ -9444,53 +9444,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 173180369796604966, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}
---- !u!1 &537687362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 537687364}
-  - component: {fileID: 537687363}
-  m_Layer: 0
-  m_Name: Temp Game Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &537687363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537687362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5cd888b67903b84dbd2227edb16aa93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseSens: 10
-  currentSceneIndex: 2
-  sceneIndex: 0
---- !u!4 &537687364
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537687362}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -88.086655, y: 7.6420536, z: 60.369965}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &538301409 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2623007341096042063, guid: 1fbfe50db1277354090207419f48e9f2, type: 3}
@@ -64042,4 +63995,3 @@ SceneRoots:
   - {fileID: 1055108711}
   - {fileID: 626111664}
   - {fileID: 2115697250}
-  - {fileID: 537687364}
