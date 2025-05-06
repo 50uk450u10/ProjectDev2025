@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] AudioMixer mixer;
     public static GameManager instance;
     public float mouseSens;
     public int currentSceneIndex;
     public int sceneIndex;
+
+    public const string VOLUME_KEY = "masterVolume";
 
     private void Awake()
     {
@@ -19,6 +23,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+
+        LoadVolume();
     }
 
     void Start()
@@ -41,5 +47,11 @@ public class GameManager : MonoBehaviour
                 sceneIndex = currentSceneIndex;
                 break;
         }
+    }
+
+    void LoadVolume()
+    {
+        float masterVolume = PlayerPrefs.GetFloat(VOLUME_KEY, .5f);
+        mixer.SetFloat(VolumeSettings.MIXER_VOLUME, Mathf.Log10(masterVolume) * 20);
     }
 }

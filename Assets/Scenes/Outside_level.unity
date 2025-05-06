@@ -11822,7 +11822,7 @@ AudioSource:
   m_GameObject: {fileID: 650962086}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: be0f07f07f9d9414db8945c9049e0150, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -12962,6 +12962,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6622524887339483091, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621660340974680864, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8667600437327207568, guid: b47826118cca9f948bbfe43e071b365b, type: 3}
@@ -17229,6 +17233,14 @@ PrefabInstance:
       propertyPath: sprintBar
       value: 
       objectReference: {fileID: 527149032}
+    - target: {fileID: 1993142416344425352, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: be0f07f07f9d9414db8945c9049e0150, type: 2}
+    - target: {fileID: 3476899973008913485, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: be0f07f07f9d9414db8945c9049e0150, type: 2}
     - target: {fileID: 3905613493686647630, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.92
@@ -17273,6 +17285,10 @@ PrefabInstance:
       propertyPath: myInventory
       value: 
       objectReference: {fileID: 5899408826223191532}
+    - target: {fileID: 5386122974814306106, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: be0f07f07f9d9414db8945c9049e0150, type: 2}
     - target: {fileID: 6637040341132927618, guid: d37f654cc7dc49a4dbe4a01e115bd90f, type: 3}
       propertyPath: m_Name
       value: Player
