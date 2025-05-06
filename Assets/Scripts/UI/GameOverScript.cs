@@ -21,4 +21,9 @@ public class GameOverScript : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }
