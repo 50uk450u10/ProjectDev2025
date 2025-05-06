@@ -37954,7 +37954,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1621714400}
         m_TargetAssemblyTypeName: GameOverScript, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: ExitToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44442,7 +44442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ef827b7f6a58d42832947f45d36952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: MainMenu
 --- !u!114 &1621714401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60268,7 +60267,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1621714400}
         m_TargetAssemblyTypeName: GameOverScript, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: CloseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
