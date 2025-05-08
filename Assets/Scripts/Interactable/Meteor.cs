@@ -54,6 +54,8 @@ public class Meteor : MonoBehaviour
         if (hasItem1 && hasItem2 && hasItem3)
         {
             gameObject.GetComponent<AudioSource>().PlayOneShot(WinClip);
+            var player = FindAnyObjectByType<PlayerController>();
+            if (player != null) { player.killable = false; }
             StartCoroutine(PauseForSound());
         }
 

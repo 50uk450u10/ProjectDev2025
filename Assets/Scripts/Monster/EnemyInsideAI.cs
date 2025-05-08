@@ -124,7 +124,7 @@ public class EnemyInsideAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) //Check for player inside trigger colliders, perform contact function if it is player
     {
-        if (other.gameObject == player.gameObject)
+        if (other.gameObject == player.gameObject && player.GetComponent<PlayerController>().killable)
         {
             currentState = State.ATTACKING;
             gameObject.GetComponent<SphereCollider>().enabled = false;

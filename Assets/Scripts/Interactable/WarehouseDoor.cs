@@ -45,6 +45,8 @@ public class WarehouseDoor : MonoBehaviour
         if (hasItem1 && hasItem2)
         {
             gameObject.GetComponent<AudioSource>().PlayOneShot(openClip);
+            var player = FindAnyObjectByType<PlayerController>();
+            if (player != null) { player.killable = false; }
             StartCoroutine(PauseForSound());
         }
 

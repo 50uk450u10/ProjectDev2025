@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public UnityAction on_InteractPressed;
     public UnityAction on_InteractReleased;
     [SerializeField] Inventory myInventory;
+    public bool killable = true;
 
 
     // Start is called before the first frame update
@@ -66,4 +67,5 @@ public class PlayerController : MonoBehaviour
 
         return input.x * camRight + input.y * camForward;
     }
+
 }
