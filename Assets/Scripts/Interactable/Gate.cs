@@ -7,6 +7,7 @@ public class Gate : MonoBehaviour
     [SerializeField] TMP_Text PopupText;
     [SerializeField] TMP_Text interactionText;
     private Canvas interactCanvas;
+    private PlayerController player = null;
 
 
     private void Start()
@@ -17,22 +18,34 @@ public class Gate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (interactCanvas != null)
+        player = other.GetComponent<PlayerController>(); //Grab player component from collider's gameobject
+
+        if (player != null)
         {
-            interactCanvas.enabled = true;
+
+            if (interactCanvas != null)
+            {
+                interactCanvas.enabled = true;
+            }
+            interactionText.text = "";
+            PopupText.text = "No going back that way...";
         }
-        interactionText.text = "";
-        PopupText.text = "No going back that way...";
     }
 
     private void OnTriggerExit(Collider other)
     {
-        PopupText.text = "";
-        interactionText.text = "Press E";
-        if (interactCanvas != null)
+        player = other.GetComponent<PlayerController>(); //Grab player component from collider's gameobject
+
+        if (player != null)
         {
-            interactCanvas.enabled = false;
+            PopupText.text = "";
+            interactionText.text = "Press E";
+            if (interactCanvas != null)
+            {
+                interactCanvas.enabled = false;
+            }
         }
+
     }
 
 }
