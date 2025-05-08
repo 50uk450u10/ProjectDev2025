@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MouseMovement : MonoBehaviour
 {
-    [SerializeField] float sensitivity = 500f;
+    [SerializeField] float sensitivity;
     private float rotX;
     private float rotY;
 
@@ -17,6 +17,7 @@ public class MouseMovement : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;           //locks cursor
+        sensitivity = GameManager.instance.mouseSens * 25f;
     }
 
     // Update is called once per frame
@@ -40,7 +41,7 @@ public class MouseMovement : MonoBehaviour
 
     public void SetSensitivityFromSlider(float sliderValue)
     {
-        sensitivity = sliderValue * 50f;
+        sensitivity = sliderValue * 25f;
         Debug.Log("Slider value is: " + sliderValue.ToString());
     }
 
